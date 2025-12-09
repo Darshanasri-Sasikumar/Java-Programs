@@ -35,12 +35,18 @@ public class LargestOfTwoNumber {
         }
 
         // using Ternary Operator
+        
         int e = 10;
         int f = 20;
         int largest = (e>f) ? e : f;
         System.out.println("The Largest Number is " + largest);
 
         // using Java Inbuild Method
+       /*
+         * 1.It Belongs to Math class
+         * 2.it compares two values
+         * 3. it return the biggest value
+         */
         int first_number = 15;
         int Secound_number = 20;
 
