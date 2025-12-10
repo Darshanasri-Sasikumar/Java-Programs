@@ -72,6 +72,88 @@ literals
 1.Literals are nothing but Fixed values that can be written in java programming Languvange
 2.The literal is the actual value stored inside the variable
 
+Type Casting
+1.Process of Converting one datatype into Another datatype is TypeCastine
+We have two types of type casting
+Primitive Type casting and Non -Primitive Type casting
+
+Primitive Casting:
+   Converting one primitive data type into another primitive data type is know as Primitive data type is know as Primitive type casting
+   We have 2 types of Primitive type casting:
+         1.Widening
+         2.Narrowing
+    
+
+
+    Widening:
+           The Process of converting Lower range of primitive datat type into higher range of primitive data type is called widening
+           it is an Implicit process
+           We can achive widening by typecaste operator or non type caste operator
+
+           Example:
+           public class widening {
+                  public static void main(String[] args) {
+                   // example for widening
+                    int num = 10;
+                    long number = num;
+                    float no = number;
+                    System.out.println(no);
+                 }
+        }
+
+    Q1.Can we achive widening Explicitly?
+    ->yes
+
+    Narrowing:
+            The Process of converting higher Range of Primitive types into Lower Range of Prmitive types is known as Narrowing
+            In Narrowing we can face Data Loss
+            so we can expect Compile time error
+            We can Achive Narrowing only by type caste operator
+
+            Example:
+             public class widening {
+                  public static void main(String[] args) {
+                   // example for widening
+
+                      double a =10.00;
+                      int b = (int)a;
+
+                     System.out.println(b);
+                   
+                 }
+               }
+
+Non-Primitve Type casting:
+      1.upcasting 
+      2.Down Casting
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Flow statements:
+    Controlling the flow of execution is know as Control flow Stmts
+
+we have 2 type of Control flow statements:
+        1.Decision making statements->if,else,else if,else if ladder and switch(Examples in Number Programming)
+        2.Looping statements->while,do while,for loop advance foreach loop
+
+switch->we cannot pass long ,float ,boolean,double type of data type we can face data loss
+
+
+Break:
+   1.it is a keyword
+   2.used to exist from loop
+   3.it stops from further iterations
+
+
+
+
+
+
+
+
+
+
+
 
 
 
