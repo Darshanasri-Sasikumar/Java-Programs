@@ -144,6 +144,48 @@ Break:
    2.used to exist from loop
    3.it stops from further iterations
 
+Continue:
+   1.it is keyword
+   2.It is used to skip the current iteration of a loop and continue with the next iteration.
+
+Return:
+  1.End a method and send a value back
+  2.it is a keyword
+
+
+  Method:
+
+   It is A block of instruction it is used to Perform a task
+      ->Code Reusability
+      ->Readability
+      ->better Programming structure
+   Syntax:
+   Access Modifier,Modifier,return type,Method Name,([Data type one and Data type 2])
+
+  We have 2 types of Method:
+      1.Parameterized Method
+      2.Non-Parameterized Method
+  
+
+
+  Access Modifier:
+         This decideds the visibility of the mothod
+                    1.public ->all
+                    2.private ->within the same class
+                    3.default ->within package
+                    4.protected->same package but sub class of other package
+  
+  Modifier:
+         These are components which decideds the characterstics of method
+         1.static
+         2.
+          
+        
+  
+
+
+   
+
 
 
 
