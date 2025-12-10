@@ -32,6 +32,20 @@ Commands
 Compilation command-->javac FileName.java
 Execution command-->java ClassName
 
+Java Memory Areas (Very basic introduction)
+
+Stack
+Heap
+Method Area
+Class Area
+
+Java Architecture Flow
+Java Source Code → .java file
+Compiler (javac) → converts to .class (bytecode)
+JVM → Converts Bytecode to Machine Code (Binary)
+OS → Executes Machine Code
+
+
 Tokens:
 In Java, tokens are the smallest meaningful units of a program.
 There are 5 types of Tokens:
@@ -71,6 +85,24 @@ Operators
 literals
 1.Literals are nothing but Fixed values that can be written in java programming Languvange
 2.The literal is the actual value stored inside the variable
+
+Data Types (Primitive & Non-Primitive)
+1.Primitive Data Types
+2.byte
+3.short
+4.int
+5.long
+6.float
+7.double
+8.char
+9.boolean
+
+Non-Primitive Types
+String
+Array
+Class
+Interface
+Enum
 
 Type Casting
 1.Process of Converting one datatype into Another datatype is TypeCastine
@@ -159,6 +191,8 @@ Return:
       ->Code Reusability
       ->Readability
       ->better Programming structure
+      ->Reduces code length
+      ->Easy debugging
    Syntax:
    Access Modifier,Modifier,return type,Method Name,([Data type one and Data type 2])
 
@@ -177,8 +211,108 @@ Return:
   
   Modifier:
          These are components which decideds the characterstics of method
-         1.static
-         2.
+         1.static ->belongs to class no Object required
+         2.final ->Cannot be ovveriden
+         3.Abstract -> No body must be Override
+         4.Synchronized->Thread safe
+   
+   Return Type:
+         Specifies what kind of data can be written
+         1.void->no return required
+         2.Primitive Data type->int ,byte,float,long,double
+         3.Non - primitive data type ->string,class,Arrays
+   
+   return Keyword
+      Used to return data to the caller.
+      Transfers the control back to the calling method.
+      It is Also called as control tranfer Statement
+      If written before last line → other lines become unreachable.
+   
+
+Can I use return keyword inside constructor?
+   yes but it Does Not return Any value
+
+
+
+   Types of Methods:
+   1.No argument method:
+     ex:
+        public class method (){}
+   
+   2.Parameterized method: 
+     ex:
+        public class void method(int a , int b){}
+
+   3.Static method:
+      ex:
+        static void show(){}
+
+   4.Abstract method:
+      ex:
+        void method(){  }
+   
+   5.final method:
+      ex:
+       final void method(){}
+
+Final:
+final variable → value cannot change
+final method → cannot override
+final class → cannot be inherited
+
+
+
+Explain Method call process:
+     When ever method is Called Execution of the Prog Pause
+     Control Tranfered to the Called method 
+     Execution of Called Method Begins and Execute Completely
+     Once Execution completed control is given back to the Caller
+
+
+what is method overloading?
+A class having same name but differnt formal argument is know as method overloading
+
+    ex:
+       public static add(int a, int b){
+         Syste.out.println(a+b);
+       }
+
+       public static add(int a, int b , int c){
+         System.out.prinln(a+b);
+       }
+       
+
+
+Recursion:
+    It is the process of calling itself know as Recursion
+    there is a possibility for Run tim error i.e stack overflow Error
+    By Providing finite call we can avoid this
+
+
+    Constructor (Basics)
+
+You only wrote one line. Add proper basics.
+
+Constructor:
+   Same name as class
+   No return type
+   Automatically called when object is created
+   Used to initialize values
+Types:
+   Default constructor
+   Parameterized constructor
+   Copy constructor (Java doesn’t provide but can be created manually)
+
+this Keyword:
+Refers to current object
+Used when variable name and parameter name are same
+Used to call constructor
+
+Super Keyword 
+Refers to parent class object
+Used to call parent constructor
+Used to call parent method
+ 
           
         
   
