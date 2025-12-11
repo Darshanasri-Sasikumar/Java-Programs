@@ -312,6 +312,11 @@ Super Keyword
 Refers to parent class object
 Used to call parent constructor
 Used to call parent method
+
+Mathematical Task:
+ 1.Math.min(x,y)
+ 2.Math.max(x,y)
+ 3.Math.sqrt(x)
  
           
         
