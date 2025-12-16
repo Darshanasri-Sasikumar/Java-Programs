@@ -381,6 +381,86 @@ Arrays:
 
 
 
+1.How are Arrays store in the Memory?
+->An Array is an Object in Java
+->It is stored in Heap Memory
+
+2.What happens in memory?
+->arr is a reference variable
+->Java creates an array object in Heap
+->arr stores the address (reference) of that array
+
+3.Important Interview Points 
+->Arrays are stored in Heap memory
+->Array name is a reference variable
+->Index starts from 0 for performance
+->Array size is fixed
+->Multiple references can point to same array
+
+
+java.util.Arrays (Utility Class):
+---------------------------------
+                    -> Java provides the Arrays class to make array operations easy
+                    ->import java.util.Arrays;
+
+               sort():
+               ------
+                    ->It is used to sort in ascending array
+                    
+               Tostring():
+               ---------
+                    toString() converts an object into a readable String form.
+
+               equalto():
+               ---------
+                     -> equalto() it is used to compare values
+                     ->a==b checks the object's address
+                     ->a equals b method checks the value
+
+
+            if we have Primitive variable 
+            a=b // true
+            if we used in array  returns false since it compares address variable not the value
+
+            copyOf():
+            ---------
+                ->same value different memory is know as copy of method
+                int[] boxA = {1, 2, 3};
+                int[] boxB = Arrays.copyOf(boxA, boxA.length);
+
+                o/p:
+                  boxA → [1, 2, 3]
+                  boxB → [1, 2, 3]
+
+             fill():
+             ------
+                Arrays.fill() is used to fill (assign) the same value to all elements of an array.
+
+            binarySearch():
+            -------------
+                 Binary Search is a fast searching technique used to find an element in a SORTED array
+
+
+
+
+
+
+
+
+Advanced Program
+----------------
+           Move all zeroes to end
+           Remove duplicates from sorted array
+           Second largest number
+           Find frequency of each element
+           Missing number in array
+           Rotate array (left & right)
+           Check if array is sorted
+           Merge two sorted arrays
+               
+
+
+
 
       
 

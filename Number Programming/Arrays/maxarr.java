@@ -1,3 +1,4 @@
+package Arrays;
 public class maxarr {
 
     public static void main(String[] args) {
