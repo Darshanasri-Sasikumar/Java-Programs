@@ -4,8 +4,8 @@ public class digitsum {
         int num =12345;
         int digit = 0;
         while(num>0){
-           int all = num %10;
-            digit = digit +all;
+           int sum = num %10;
+            digit = digit +sum;
             num =num/10;
         }
 
