@@ -1,3 +1,4 @@
+package Programming;
 import java.util.Scanner;
 public class SmallestOfTwoNumbers {
     public static void main(String[] args) {
