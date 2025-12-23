@@ -311,18 +311,79 @@ Recursion:
 
 
     Constructor (Basics)
+    -----------------------
 
-You only wrote one line. Add proper basics.
+               Constructor:
+                           It is a Special Type of block Having name similar to className
+                           It is used to Load All the non-static mem into Obj
+                           Constructors will not have modifiers and return Type
+                           Constructor is a special method that is Automatically called when an object is created
 
-Constructor:
-   Same name as class
-   No return type
-   Automatically called when object is created
-   Used to initialize values
-Types:
-   Default constructor
-   Parameterized constructor
-   Copy constructor (Java doesn’t provide but can be created manually)
+
+               Properties of Constructor:
+                                 Same name as class
+                                 No return type
+                                 Automatically called when object is created
+                                 Used to initialize instance variables
+
+              1. Why do we need a constructor?
+                           To give initial values to an object
+                           Without constructor, variables get default values
+
+               2.Constructor can be static ? Or Constructor can be final?
+                  No ,bcz it will not have Modifiers
+
+               3.Can we have private Constructor?
+                  Yes,We Can Have But Obj Creation is Only Possible within the class 
+
+
+
+   Constructor chainig:
+   --------------------
+                     one constructor calling another constructor is called constructor chainig
+                     we can achive this using
+                          ->this call stmt
+                          ->super call stmt
+
+               This call stmt:
+                        it is used to call the constructor of the same class
+                        this call and super call stmt cannot be called together
+                        We should use this call stmt inside the constr body as first inst
+                        Recursive call is not allowe
+
+
+               Super call stmt:
+                        
+                        
+                        
+
+                        
+
+
+               Types:
+                  Default constructor
+                  Parameterized constructor
+                  Copy constructor (Java doesn’t provide but can be created manually)
+
+               Default Constructor
+               --------------------
+                           A constructor with no parameter
+                           ->either we should create manually 
+                           ->java provides itself(by default java has constructor)
+
+               Parameterized Constructor
+               --------------------------
+                            A constructor with parameter
+
+                            Why parameterized constructor?
+                            ->Avoid writing setter
+                            ->more secure and  clean codes
+                            -> Force Object to be created with values
+               
+               Constructor overloading
+               ------------------------
+                             A constructor having same name but different formal argument / diff parameter is know as constructor overloading
+
 
 this Keyword:
 Refers to current object
@@ -351,11 +412,192 @@ Arrays:
    ex:int [] arr ={1,2,3,4}
 
 
+   Types of Arrays:
+   ----------------
+                  1.One Dimensional Array
+                  2.Two-Dimensional Array(2D)
+                  3.Multi-Dimensional Array(3D)
+
+
    2.We can declare arrays in 2 ways:
          A.int [] arr =[1,2,3,4]
          B.int arr[]={1,2,3}
 
    3.Creating and Allocating Memory for an Array
+        int arr = new int[5];
+   
+   4.initializing Arrays:
+       arr[0]=1;
+       arr[1]=2;
+       arr[2]=3;
+
+    => other way of initializing
+       int [] arr ={1,2,3,4,5}
+
+    => Accessing Array Element:
+       System.out.println(arr[1]);//this will give you first Element
+      
+    => To get Array length
+       System.out.prinln(arr.length);
+
+
+
+1.How are Arrays store in the Memory?
+->An Array is an Object in Java
+->It is stored in Heap Memory
+
+2.What happens in memory?
+->arr is a reference variable
+->Java creates an array object in Heap
+->arr stores the address (reference) of that array
+
+3.Important Interview Points 
+->Arrays are stored in Heap memory
+->Array name is a reference variable
+->Index starts from 0 for performance
+->Array size is fixed
+->Multiple references can point to same array
+
+
+java.util.Arrays (Utility Class):
+---------------------------------
+                    -> Java provides the Arrays class to make array operations easy
+                    ->import java.util.Arrays;
+
+               sort():
+               ------
+                    ->It is used to sort in ascending array
+                    
+               Tostring():
+               ---------
+                    toString() converts an object into a readable String form.
+
+               equalto():
+               ---------
+                     -> equalto() it is used to compare values
+                     ->a==b checks the object's address
+                     ->a equals b method checks the value
+
+
+            if we have Primitive variable 
+            a=b // true
+            if we used in array  returns false since it compares address variable not the value
+
+            copyOf():
+            ---------
+                ->same value different memory is know as copy of method
+                int[] boxA = {1, 2, 3};
+                int[] boxB = Arrays.copyOf(boxA, boxA.length);
+
+                o/p:
+                  boxA → [1, 2, 3]
+                  boxB → [1, 2, 3]
+
+             fill():
+             ------
+                Arrays.fill() is used to fill (assign) the same value to all elements of an array.
+
+            binarySearch():
+            -------------
+                 Binary Search is a fast searching technique used to find an element in a SORTED array
+--------------------------------------------------------------------------------------------------------------------------------------------
+static Variable:
+            ->Anything that is prefixed with static keyword is know as Static variable
+               ex: static String carname = scala;
+
+            ->A static variable belongs to the class, not to objects.
+
+            ->Only ONE copy exists, shared by all objects.
+
+            ->static variable Single memory shared
+
+Non-static Variable:
+            ->Anything that is not prefixed with static keyword is know as Non-static Variable
+            ex:String carname = scala;
+           
+            ->Non static variable belongs to the object , not to the class
+
+            ->Non-static New memory for every object
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                               Java Part- 2
+                                               -------------
+
+OOP:
+    ->Object Oriented Programming
+    ->OOP is a way of writing programs using real-world objects.
+
+
+Note:A procedural language is a type of programming language where:
+why Oops choose over Procedural languvage
+Dis-Advantage of Procedural Languvage:
+   ->hard to Understand
+   ->Hard to Reduces
+   ->Hard to Maintain
+   ->code becomes big
+
+Oops
+   ->easy to Understand
+   ->code Reduces
+   ->code re-useable
+   ->easy to Understand
+   ->Less errors
+
+
+Procedural vs OOP:
+------------------
+                  
+                Procedural Programming
+                ->focus on functions
+                ->no security for data
+                ->Data is seprare
+
+                Oop:
+                ->focus on Object
+                ->Data +method together
+                ->Data is protected
+
+
+
+
+Object :
+     ->Anything that has existing in the real world enity
+     ->All the object has states (data,properties ,values) and behavior (Action,function,work)
+     ->states should be represented by non-static variable
+     ->Behaviours should be represented by non-static methods
+
+      1.Can we represent states or behaviours with static ?
+      ->Yes,member which is Same for all the Obj should be static
+      ->Member which is diff for all the Object should be reprsented by non-stattic
+
+what is a class?
+            class are blue print of an object
+            it defines state and behaviour of an object
+
+what is an object?
+           An object is an instance of a class that represents a real-world entity and occupies memory.
+
+           ClassName variable = new keyword constructor
+           car scala = new car();
+
+
+
+               
+
+
+
+
+      
+
+   
 
 
 
