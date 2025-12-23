@@ -1,0 +1,78 @@
+Spring Boot:
+--------------
+        Spring boot is an Frame Work for Java that is build on top of Spring that simplifies Application Development
+        It Supports
+                ->web Application
+                ->Rest Api's
+                ->microservices
+                ->security
+                ->and for cloud Deployment
+
+
+why Sprint boot?
+            ->Fast Development
+            ->Auto-configuration
+            ->microservices friendly
+            ->Seamless Integration
+
+Features of SprintBoot:
+-----------------------
+                ->Auto-Configuration: Automatically configures components (like Hibernate, JPA) based on dependencies. 
+                ->Easy Maintenance and Creation of REST Endpoints: With annotations like @RestController, @GetMapping and @PostMapping, creating REST endpoints is straightforward.
+
+
+Annotations Explanation:
+
+1.Core Basic Annotation:
+
+@SpringBootApplication:
+----------------------
+                  ->Main Entry Point of Spring Boot
+                  ->example:
+                  @SpringBootApplication
+                              public class DemoApplication {
+                                          public static void main(String[] args) {
+                                          SpringApplication.run(DemoApplication.class, args);
+                                                 }
+                                          }
+
+@Component
+----------
+                  -It tells spring This is a class manage it for manage
+                  @Component
+                  public class EmailService {}
+
+                        
+@Autowired
+----------
+
+      ->  @autowired:@Autowired is used to automatically connect (inject) one class into another in Spring Boot.
+      ->  we usually connect Repository / service to the controller
+
+            example:
+              @Autowired
+             private bookrepo bookRepo;
+
+@Bean:
+-----
+      ->it is used to create Object Manually and gives it to Spring
+      @Bean
+            public ModelMapper modelMapper()
+            {
+                  return new ModelMapper();
+            }
+        
+
+2.Steriotype Annotation:
+
+@controller
+------------
+            ->handels web pages 
+                @Controller
+                public class PageController {
+                }
+
+@service
+---------
+            ->it Holds Business logics
+            
