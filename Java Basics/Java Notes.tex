@@ -601,6 +601,133 @@ what is an object?
            ClassName variable = new keyword constructor
            car scala = new car();
 
+Relationship:
+------------
+         ->A connection between 2 or more classes or Object is know as Relationship
+      We have 2 types of Relationship
+      --------------------------------
+                     ->Is-A-Relationship
+                     ->Has-A-Relationship
+      Has-A-Relationship:
+      -----------------
+                  when one object depends on Another Object is know as Has-A-Relationship
+                  for example
+                        ->A car with enginee
+                        ->A human with address
+
+      There are 2 types of Dependency Based on 2 level of Dependency between Object:
+                     ->Composition
+                     ->Aggreation
+
+      Composition:
+      ------------
+               ->An Object cannot exist Without an other Object is know as Strong Dependency
+               ->If parent is destroyed child also gets destroyed
+               ->It has a strong Dependency
+               ->Tight coupling
+               ->Early Instatiation
+               ->EarlyInstantiation---Initializing an object inside another object in a single line
+
+      Aggreation:
+      -----------
+               ->An Object can exisit with or without an other object is know as Aggreation
+               ->Week Dependency i.e Week coupling
+               ->Parent and child are loosely connected
+               ->Lazy Inst:Initialization of Obj is Domne by Methods
+
+Inheritance:
+------------
+            ->The process of Aquaring states and behavior from parent class to child class is known as Inheritance
+            ->It Supports is a Relationship
+            ->Achieved using extends (class) and implements (interface)
+            ->Supports code reusability
+            ->Supports method overriding
+            ->Helps achieve runtime polymorphism
+            ->Parent class is also called Super class
+            ->Child class is also called Sub class
+
+   Method overloading:
+   -------------------
+               ->A method having same name but different formal Arguments is know as Method overloading
+               ex: coffe with milk and with sugar
+
+         Rules of Method overloading:
+         ----------------------------
+                  ->Method should have same name
+                  ->It should have different parameter
+
+   Method overriding:
+   ------------------
+                  ->A method having the same name and the same parameters in both parent and child classes is known as Method Overriding.
+
+         Rules of Method Overriding:
+         ---------------------------
+                  ->same method name
+                  ->same parameter
+                  ->Inheritance required
+                  ->return type must be same
+                  ->Access modifier should not be more restrictive 
+                  ->@Override Annotation will be used
+
+   Types of Inheritance:
+   ---------------------
+               ->Single Level Inheritance
+               ->Multi Level Inheritance
+               ->Hirarchy level Inheritance
+               ->Multiple Inheritance
+               ->Hybrid Level Inheritance
+
+   Inherted Members:
+   -----------------
+               ->static variable
+               ->static Members
+               ->Non-static variable
+               ->Non-static Members
+
+   Non-Inherited Members:
+               ->Private Data Members
+               ->Constructor
+
+   Single-Level-Inheritance:
+   -------------------------
+                  ->once child class inherites properties from the parent class is know as Single level Inheritance
+
+   Multi-Level-Inheritance:
+   ------------------------
+                  ->A class inherits from another class which is also inherited by another class.
+   
+   Hierarchical Inheritance:
+   -------------------------
+                  ->Multiple child class inherites from one parent class
+
+   Multiple Inheritance:
+   ----------------------
+                  ->One child class inherits from multiple parent classes.
+
+   Hybrid Inheritance
+   -------------------
+                  ->A combination of two or more types of inheritance.
+
+   Note:
+   -----
+         -> Multiple and Hybrid inheritance are NOT supported using classes
+         -> Multiple and Hybrid inheritance ARE supported using interfaces
+
+Why Multiple Inheritance is not supported in Java (Class):
+----------------------------------------------------------
+-> Due to Diamond Problem
+-> Causes ambiguity during method and constructor calls
+-> JVM gets confused which parent method to execute
+=================================================================================================================================================
+Abstract Method:
+            Abstract Method isn
+
+
+
+
+
+
+
 
 
                
