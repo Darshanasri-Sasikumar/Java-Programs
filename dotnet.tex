@@ -1,0 +1,97 @@
+Middleware:
+            ->Middleware is a component that runs between the request and the response
+            ->It is present inside a pipeline Acts As an GateKeeper between Request and responses
+            ->pipeline means sequence of middle ware
+            ->Used in Authentication and Authorization
+            Request  →  Middleware 1 → Middleware 2 → Controller
+            Response ←  Middleware 1 ← Middleware 2 ← Controller
+            ->Authentication & Authorization
+            ->Logging
+            ->Exception handling
+            ->Request/Response modification
+            ->Routing
+
+            Built-in Middleware Examples
+
+UseAuthentication()
+
+UseAuthorization()
+
+UseRouting()
+
+UseExceptionHandler()
+
+UseCors()
+
+UseStaticFiles()
+
+
+Authentication->checks who you are
+Authorization->what are the access you are
+Dependency Injection - Dependency Injection is a design pattern where objects are given the things they need, instead of creating them by themselves.
+
+
+
+MVC Pattern
+-------
+
+MVC stands for Model – View – Controller.
+It is a design pattern used to separate application logic, UI, and data.
+
+Model
+
+        Holds database information
+        Contains table structure
+        Column names
+        Data types
+        Model is a class
+        Supports features like Soft Deletes if required
+        Communicates with the database
+        It is also used to write the relationship like hasOne and hasMany(how to define na Navigation property->it has virtual keyword)
+        Validation can be given as Annotation
+
+Validation:
+            given as Annotation
+            or Fluent Api DB Context
+
+Eager Loading:
+            ->Loading all the related Datas along with main data in a single query or command using "include()"and .ThenInclude()
+
+Lazy Loading:
+            ->Loading Related Data only when it is called
+
+📌 Example: Entity classes, data validation, database mapping
+
+View
+
+            Represents the User Interface (UI)
+            Displays data to the user
+            Uses technologies like:
+            HTML
+            CSS
+            JavaScript
+            jQuery
+            Vue.js
+
+Does not contain business logic
+
+📌 Example: Pages, forms, tables, UI screens
+
+Controller
+
+                Acts as a bridge between Model and View
+                Handles HTTP requests and responses
+                Receives user input
+                Calls Model to process data
+                Sends data to View for display
+
+📌 Example: Handles GET, POST, PUT, DELETE requests
+
+MVC Flow
+
+            User sends a request
+            Controller receives the request
+            Controller interacts with Model
+            Model returns data
+            Controller passes data to View
+            View displays the result to the user
