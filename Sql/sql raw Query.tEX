@@ -1,0 +1,50 @@
+1.To create Database :
+            Create DataBase DataBaseName;
+            Syntax:Create Database Practice;
+
+
+2.To create Table:
+            Create Table TableName(
+            ColumnName DataType Constrain,
+            ColumnName DataType Constrain,
+            ColumnName DataType Constrain);
+
+        Example:
+            use practice;
+                CREATE TABLE Student (
+                    Id INT PRIMARY KEY,
+                    FirstName VARCHAR(255),
+                    LastName VARCHAR(255),
+                    SchoolName VARCHAR(255));
+
+3.To Insert values inside the table
+                    INSERT INTO TABLENAME(COLUM1,COLUM2,COLUM3)
+                    VALUES('value1','value2','value3');
+
+                    Example:
+                    INSERT INTO STUDENT(ID,FIRSTNAME,LASTNAME,SCHOOLNAME)
+                    values (1,'DARSHANA','SRI','JV');
+
+4.To update value
+                UPDATE TableName,
+                Set ColumnName = 'value'.
+                where condition;
+5.To delete value
+                Delete from TableName
+
+6.To  list 
+                Select *
+                from TableName;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+SQL Aggregate Functions
+        An aggreate function is to perform calculation,set of values and returns a single value
+        There are 5 most commonn sql functions:
+                ->min()
+                ->max()
+                ->count()
+                ->sum()
+                ->avg()
+
+
+
