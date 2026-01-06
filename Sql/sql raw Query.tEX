@@ -98,3 +98,141 @@ Composite Primary Key:
             A composite primary key is a primary key made up of two or more columns to uniquely identify a row.
             It cannot allow NULL values
             It enforces uniqueness across the combination of columns
+
+1.Difference between DBMS and RDBMS
+2.what is RDBMS
+3.types of DataType:
+        ->char->memory space is high -?size 2000
+        ->VARCHAR-> variable memory allocation ->size 4000
+        ->number->precision (int ) ->scale(decimal)
+        ->timestamp
+        ->Date
+        ->Large Object ->Binary LO 
+4.constraints:it is used to validate the column data
+                ->uniquely
+                ->Not NULL
+                ->check
+                ->primary key
+                ->fk
+
+5.difference between pk and fk
+
+    Primary Key
+                ->uniquely
+                ->does not accept null values
+                ->a table can have only one pk
+                ->it is combination of unique and not null
+
+    Foreign Key
+                ->A table can have one or more fk
+                ->it accepts null
+                ->not unique
+                ->it is used conect one table to another
+
+6.ddl->Create,Rename,Alter,Drop,Truncate
+7.DML->Insert,update,delete
+8.TCL ->commit ,Rollback and save point
+9.DCL ->Grant and revoke
+10.DQL ->select,selection,projection and joins
+
+11.DQL -> 
+It is used to fetch the data from the database
+->select->retrive the data from table
+->selection->retrive both row and column in table
+->projection->select onyl data from table by selecting the colums only
+->joins->it is used to fetch the data from 2 different table
+
+Note:Expression- Combination of operators and operonds called Expression
+
+12.what is meant by alias
+13.where clause:
+            ->It is used to filter the records
+            ->it executes row by row
+            ->It executes after from clause
+            ->we can pass multiple conditions
+
+        Order of execution:
+            from
+            where
+            select
+            distinct
+            orderby
+14.what is meant by distinct clause:
+        ->Disitict clause is used to remove duplicates or repeated values
+        ->It should be taken as first arugument
+        
+15.Logical Operators:
+        AND,OR,Not
+
+16.set Operators
+            ->UNION->It is used to combine 2 or more queries  and also  unique
+            ->Union All->it is used to retrive all the data 
+            ->Intersect
+            ->Minus
+
+Group:
+        ->Group by clause is used to group the records one or more columns with the help of aggreagte functions
+        ->Group by clause we can use column name and Expression
+        ->Group by clause excutes row by row
+        ->Any conition executes after group by cluse it must execute group by group  
+Having clause:
+        ->Group filter condition
+17.Functions:
+            ->it is a set of codes it is been executed when it is been called
+            ->we have 2 type of function:
+                    +build-in function
+                    +user define function 
+
+        Build in function can be further calssified into 
+                            -> single row function
+                            -> Multi row function
+
+        ->Single row function
+                    ->Takes input only 1 at a tine and pocceds the Output
+                    ->it executes row by row
+                    ->for single row functions will have n number of input and n number of Output
+
+        ->MultiRow Functiona:
+                    ->Multi row function is also known as aggreate function or group function
+                    ->It executes group by group
+                    ->for n number of input provides only one Output
+                    type:
+                        ->min()
+                        ->max()
+                        ->sum()
+                        ->count()
+                        ->avg()
+
+                    Rules of Multi Row functions:
+                            ->MRF can accept only one arugument
+                            ->along with MRF it should not take any other arugument
+                            ->we cannot pass multi row function in where clause
+                            ->count is the only function which accepts count(*) as input
+                            ->multi row function ignores null value
+
+Single Row Function:
+                ->Length()
+                ->concat()->||
+                ->upper()
+                ->lower()
+                ->reverse()
+                ->initcap()
+                ->mod()
+                ->round()
+                ->truncc()
+                ->nvl()
+                ->to_char()
+                ->month_between()
+                ->add_month() 
+                ->last_Day()
+                ->substr()Returns a portion of a string starting from a given position.
+                ->instr()Returns the position of a substring within a string.
+                ->replace()
+            
+difference between instr() and substr()
+
+Having clause:
+            ->It works as group filter function
+            ->it executes after groupby clause
+            ->having clause is depended to the group by clause
+            ->we can have multi row function inside the group by clause
