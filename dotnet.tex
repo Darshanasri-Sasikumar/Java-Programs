@@ -1,4 +1,5 @@
 Middleware:
+        Middleware is a component that exists in the request–response pipeline between the client and the server.
           ->Middleware is software that sits between the client request and server response in an ASP.NET Core application.
           ->Middleware Acts as an checkpoint between request and response
             ->Middleware is a component that runs between the request and the response
@@ -408,5 +409,130 @@ Entity Framework:
                     many to one
                     many to many
                     
+
+Keywords:
+        1.static :
+         ->Anything that is belongs to the class not the Object 
+         ->It can be Prefixed with method or varable
+         ->it can be declared inside the class not to the method
+         ->It can be Accessed without creating and Object
+         ->static method cannot be overrided
+         class parent{
+                public static main(){
+                        Console.WriteLine('hi');
+                }
+         }
+
+         2.Virtual :
+                ->It can be prefixed me with method ,proprties
+                ->it can be override from parent class to child class
+                ->Basically it is used for runtime
+                ->It must be declared inside the class
+                ->it can be override a method with override keyword
+                class parent(){
+                        public virtual method(){
+                                console.WriteLine("hi");
+                        }
+                }
+
+                class child : parent(){
+                        public override method(){
+                                Console.WriteLine("bye");
+                        }
+                }
+                class Program
+                {
+                static void Main()
+                {
+                        Animal a = new Dog(); // base class reference, derived class object
+                        a.MakeSound();        // Output: Dog barks
+                }
+                }
+
+        3.override:
+                        ->it is used in child class
+                        ->it allows child method to override
+                        ->the parent method must be virtual
+
+        4.Sealed:
+                        ->static method cannot be sealed
+                        ->sealed method can be Inheried
+                        ->override sealed method cannot be inherited
+                        ->sealed cannot use virtual directly
+                        ->No child no further challenges
+        5.readonly:
+                        ->does not allow to change
+                        ->it can be set onlt once 
+                        ->the value of readonly be constant
+                        ->it can be used only at the time declaration or inside the ccontroller
+                        ->it can be write only once
+                        ->const is fixed forever
+
+Value type:
+                value type is nothing but it stores actual values
+                when u copy it creates a new copy
+                ->int
+                ->char
+                ->double
+                ->float
+                ->boolean
+                ->struct
+                ->enum
+
+refference type:
+                it is Usually store the address of the value
+                when u copy it both contain same address
+                ->class
+                ->interface
+                ->string
+                ->array
+                ->object
                     
 
+| Point               | Abstract Class                            | Interface                              |
+| ------------------- | ----------------------------------------- | -------------------------------------- |
+| Variables           | Can have variables                        | Cannot have variables (only constants) |
+| Access Modifiers    | Can use `public`, `protected`, `private`  | All methods are `public` by default    |
+| Fields              | Can have instance fields                  | Only `public static final` (constants) |
+| Method Type         | Can have abstract + concrete methods      | Only abstract methods (basic level)    |
+| Inheritance Keyword | `:` (inherits)                            | `:` (implements)                       |
+| Purpose             | Used when classes are **closely related** | Used when classes are **not related**  |
+| Speed               | Slightly faster                           | Slightly slower                        |
+| State (data)        | Can store state (data)                    | Cannot store state                     |
+|Constructor          |it can have Constructor                    | It does not have any Constructor
+|                      implementation can be done with abstract     interface can have implementation to the child class
+                        and concrete method   
+                        multiple inhertance is not possible             multiple inhertance is not possible     
+                        
+                        
+DbContext:
+        ->Db context is a class provided by entityframeworkcore
+        ->it acts as an bridge between C# and database
+        ->It Represents the data base
+        ->allows to querry and save the database
+        ->it also handles db transactions 
+        ->It contain DB set
+
+DBset Represents set in database
+DbSet<T> = Represents a table
+DbContext = Represents the database
+SaveChanges() = Saves data to the database
+
+Data Mapping :
+        ->converting table data into Object
+        ->As it Reduces Manual COading
+        ->To maintain Application clean and maintable
+        ->It supports ORM
+        Types of Data Mapping
+1️⃣ Manual Data Mapping
+        Developer assigns values manually
+        Example: user.Name = row["name"];
+2️⃣ Automatic Data Mapping
+        Framework maps automatically
+        Example: Entity Framework
+
+        Advantages of Data Mapping
+        Less code
+        Less errors
+        Easy maintenance
+        Clean architecture
