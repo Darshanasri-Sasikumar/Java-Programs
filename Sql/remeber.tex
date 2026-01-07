@@ -1,0 +1,21 @@
+1.view
+    A VIEW is a virtual table based on the result of a SQL query.
+It does not store data physically, but retrieves data from underlying tables when accessed.
+    ->It is a virtual table
+    ->it does not take actual memory space
+    ->reduces complexity of sql queries
+2.index
+        ->Index is an data base Object
+        ->It improves speed of the retrival data from the table
+        ->used for large data
+        ->brings an exact matching records
+        ->Quick to locate row without exact match to the table
+
+3.cluster vs non-cluster
+| Feature          | Clustered Index                                                 | Non-Clustered Index                          |
+| ---------------- | --------------------------------------------------------------- | -------------------------------------------- |
+| Storage          | **Reorders the actual table rows**                              | Separate structure from the table            |
+| Number per table | Only **1 per table** (because rows can be ordered only one way) | Multiple indexes allowed                     |
+| Speed            | Faster for **range queries**                                    | Slightly slower than clustered               |
+| Use              | Primary key is usually clustered                                | Used on columns that are frequently searched |
+| Example          | Table sorted by `emp_id`                                        | Index on `emp_name` to search quickly        |
