@@ -471,6 +471,7 @@ Keywords:
 Value type:
                 value type is nothing but it stores actual values
                 when u copy it creates a new copy
+                Changes in one do not affect the other
                 ->int
                 ->char
                 ->double
@@ -482,6 +483,7 @@ Value type:
 refference type:
                 it is Usually store the address of the value
                 when u copy it both contain same address
+                Changes in one affect the other
                 ->class
                 ->interface
                 ->string
@@ -536,3 +538,39 @@ Data Mapping :
         Less errors
         Easy maintenance
         Clean architecture
+
+
+Destructor:
+
+        A destructor is a special method
+        It is used to fress out the memory to fress out the resoure
+        It is used to release unmanaged resources
+        It is called automatically by the Garbage Collector
+        It does not delete objects itself
+        Garbage Collector (GC):
+        GC is responsible for memory management
+        It identifies unused objects
+        It removes objects from memory
+        It may call the destructor before destroying the object
+
+
+Difference between const and readonly
+
+| Feature                | `const`                              | `readonly`                               |
+| ---------------------- | ------------------------------------ | ---------------------------------------- |
+| Value change           | ❌ Cannot be changed                  | ✅ Can be changed **only in constructor** |
+| When value is assigned | **Compile time**                     | **Run time**                             |
+| Inheritance            | Value is **copied** to derived class | Value is **inherited**                   |
+| Access                 | Always **static implicitly**         | Can be **instance or static**            |
+| Modification           | Never allowed                        | Allowed only in constructor              |
+
+Difference between thow and throws
+
+| Feature              | **throw**                                 | **throws**                          |
+| -------------------- | ----------------------------------------- | ----------------------------------- |
+| Purpose              | Used to **explicitly throw an exception** | Used to **declare exceptions**      |
+| Used in              | Method body                               | Method declaration                  |
+| Language             | Java & C#                                 | **Java only**                       |
+| Number of exceptions | Throws **one exception at a time**        | Can declare **multiple exceptions** |
+| Handling             | Transfers control to `catch`              | Passes responsibility to caller     |
+

@@ -19,3 +19,65 @@ It does not store data physically, but retrieves data from underlying tables whe
 | Speed            | Faster for **range queries**                                    | Slightly slower than clustered               |
 | Use              | Primary key is usually clustered                                | Used on columns that are frequently searched |
 | Example          | Table sorted by `emp_id`                                        | Index on `emp_name` to search quickly        |
+
+
+4.rollbac,savepoint,commit
+Commit - Used to permanently save the changes made in a transaction.
+Commit;
+Rollback - Used to undo the changes in the transaction
+Rollback;
+SavePoint - Used to set a check point inside a transaction
+
+        INSERT INTO employee VALUES (1,'Ram');
+        SAVEPOINT s1;
+        UPDATE employee SET name='Ravi' WHERE id=1;
+        ROLLBACK TO s1;   -- update undone
+        COMMIT;           -- insert saved
+
+
+5. These are windows function
+  ROW_NUMBER()->it is used to assing unique values to the particular row
+  RANK()-Same rank for same values
+  DENSE_RANK()-Same rank for same values
+  ROW_NUMBER gives unique numbers, RANK skips numbers on ties, and DENSE_RANK does not skip numbers.
+
+6.Trigger:
+        ->trigger is a database object that automatically executes an even accours
+        such as insertion,updation and deletion
+
+7.Transaction :
+            Transaction are set of sql operation to perform particular task
+            it can allows multiple database operation in single understanding
+            ACID
+            A-Atomocity->when ever one operation fails enter thing gets Rollback
+            C-Consistance-Consistency ensures database rules are not broken.
+            I-Isolation-Isolation ensures concurrent transactions do not affect each other.
+            D-Durability-commit are store permanently
+
+8.Temporary table:
+            Temporary table is used to the data and gets drop after use
+
+9.Normalization:
+            Normalization is the process of organising data into the database and reduce data redendecy(duplicate) and anomaly
+            To remove duplicate data
+            To save storage
+            To maintain data consistency
+            To avoid insert, update, delete anomalies
+
+->First Normal Form (1NF)
+    ✔ No repeating groups
+    ✔ Atomic (single) values only
+
+->secound Nomral Form(2NF)
+     ✔ Table must be in 1NF
+     ✔ No partial dependency
+
+->Third Normal Form (3NF)
+✔ Table must be in 2NF
+✔ No transitive dependency
+
+🔁 Easy Memory Trick
+
+        1NF → Atomic values
+        2NF → No partial dependency
+        3NF → No transitive dependency

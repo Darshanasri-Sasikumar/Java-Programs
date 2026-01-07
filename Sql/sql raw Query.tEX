@@ -236,3 +236,44 @@ Having clause:
             ->it executes after groupby clause
             ->having clause is depended to the group by clause
             ->we can have multi row function inside the group by clause
+
+Joins:
+        ->It is used to retrive data from different table is know as Joins
+                        ->Cartesian Join or cross join
+                        ->Inner Join or equie join
+                        ->Self Join
+                        ->Natural Join
+                        ->Outer Join
+                
+        Cartesian Join
+        --------------
+                        ->cartesian join is also know as cross join
+                        ->it is used to retrive combination of data from all the tables
+                        ->it is usually done carefully since it can give huge result set
+                        syntax:
+                        SELECT e.name, d.dept_name
+                        FROM employee e
+                        CROSS JOIN department d;
+        Inner Join:
+                        INNER JOIN is used to retrieve only the matching rows from two or more tables.
+                        It returns rows where the join condition is true.
+                        Rows without a match in either table are excluded.
+                        It is also called a simple join or equijoin when using equality.
+                        Syntax:
+                                ansii
+                                        SELECT EMP,DEPT
+                                        FROM EMP
+                                        INNER JOIN DEPT
+                                        ON E1.EMP = D1.DEPT;
+                                OLD:
+                                        SELECT e.name, e.email, d.dept
+                                        FROM emp e, dept d
+                                        WHERE e.dept_id = d.dept_id;
+
+        Natural Join :
+                        INNER JOIN is used to retrieve only the matching rows from two or more tables.
+                        It returns rows where the join condition is true.
+                        Rows without a match in either table are excluded.
+                        It is also called a simple join or equijoin when using equality.
+
+
