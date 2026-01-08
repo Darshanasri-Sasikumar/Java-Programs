@@ -371,6 +371,13 @@ life spans
 loosely coupled 
 
 
+WebApi:
+        Web API is used to build HTTP-based services.
+        It supports HTTP methods like GET, POST, PUT, PATCH, DELETE.
+        Data is passed through URL parameters, query strings, headers, or request body.
+        It returns data, usually in JSON format.
+        It is used by web applications, mobile applications, and other systems
+
 Dependency Injection:
                     Dependency Injection is nothing but utilising the object from somewhere but not actually using it
                     the object it dependent from other class
@@ -574,3 +581,135 @@ Difference between thow and throws
 | Number of exceptions | Throws **one exception at a time**        | Can declare **multiple exceptions** |
 | Handling             | Transfers control to `catch`              | Passes responsibility to caller     |
 
+
+
+Ref :
+        -ref is used to pass a variable by reference.
+        A reference variable points to the same memory location instead of creating a copy.
+        It allows the method to read and modify the original variable.
+        It is used to modify existing memory values.
+        The variable must be initialized before passing.
+        Any changes made inside the method are reflected in the original variable.
+
+out Keyword
+
+                Used to pass a variable by reference for output purpose.
+                Points to the same memory location.
+                Method cannot read the value before assigning.
+                Used to return multiple values from a method.
+                Variable need not be initialized before passing.
+                Method must assign a value before returning.
+                Changes inside the method reflect in the original variable.
+
+ref requires initialization and is used to modify an existing value, whereas out does not require initialization and is used to return a value from a method.
+
+Cluster:
+        A cluster is a connect multiple database server working together as one databse serve
+        It defines the physical order of the database
+        Only one cluster index per Pages
+        Stored in a table order
+        only one cluster is allowed in a table
+        faster for range queries
+        data pages store in sorted order
+
+
+
+Non-cluster:
+        ->It does not have any physical order insted it has logical order
+        ->store in seperate index structure using pointers 
+        ->Mulitiple non cluster allows in a table
+        faster for lookup queries
+        Stored in a separate index structure.
+
+
+Store Procedure:
+        ->A storeProcedure is a collection of SQL statements
+        ->It is used to perform sequence of operations such as querring,insert,update and delete
+        ->Unlike regular SQL queries, stored procedures group multiple SQL statements into a single reusable unit, avoiding repeated SQL code.
+  The benfits of store procedure:
+                ->Code reusability
+                ->Enhance performance
+                ->security
+        Syntax:
+                CREATE PROCEDURE ProcedureName
+                @Column1 DataType
+                AS
+                BEGIN
+                -- SQL statements
+                END;
+
+Trigger:
+        Trigger is a database object 
+        Trigger is used to perform SQL operations
+        it is been fired when  DML statemt like ->insert update delete can be perfomed
+       Triggers are automatically invoked; they do not need to be called explicitly.
+        
+  dis-Adv:
+        -> Hard to understand
+        ->some of the code are hidden to the developer
+        ->can affect performance
+
+
+LINQ:
+        Languvage Integrated queries
+        It is used to perform querry using c# Languvage
+        it acts as an bridge between c# and database
+        it is used to querry,filter,sort 
+        Works with collections, databases, XML, and objects.
+        Type-safe and easy to read.
+        Reduces complex loops and conditions.
+
+
+Delegates :
+       Delegates defines the method signature that it points To
+       it can reffer both static and non static method
+       Delegates are type-safe meaning the method signature must match the delegate declaration.
+
+  when to use?
+        To achieve loose coupling
+        For event handling
+        It is use to handle the exception
+        It is used to write flexible and reueable code
+        for Functional style program we can use LINQ function
+
+Declaration of Delegates 
+        access_modifier delegate return_type DelegateName(parameter_list);
+
+using System;
+public class DelegateExample
+{
+    // Delegate declaration
+    public delegate void MyDelegate(string message);
+
+    // Method matching the delegate signature
+    public static void DisplayMessage(string msg)
+    {
+        Console.WriteLine("Message: " + msg);
+    }
+
+    public static void Main()
+    {
+        // Instantiating delegate
+        MyDelegate del = DisplayMessage;
+
+        // Invoking delegate
+        del("Hello from delegate!");
+    }
+}
+
+what is meant by event handlers:
+
+
+Difference between = and == and equals()
+        = assigns a value ,operator,it cannot be ovveriden
+        ==checks the value or memory address
+        equals()checks the value,method ,can be overriden
+
+Throw vs Throwex
+| Point         | `throw`                          | `throw ex`                    |
+| ------------- | -------------------------------- | ----------------------------- |
+| Purpose       | Re-throws the **same exception** | Throws the exception again    |
+| Stack trace   | **Keeps original error line**    | **Loses original error line** |
+| Debugging     | Easy to find real issue          | Hard to find real issue       |
+| Best practice | ✅ **Recommended**                | ❌ Not recommended             |
+| Used inside   | `catch` block                    | `catch` block                 |
