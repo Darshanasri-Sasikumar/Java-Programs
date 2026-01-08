@@ -713,3 +713,85 @@ Throw vs Throwex
 | Debugging     | Easy to find real issue          | Hard to find real issue       |
 | Best practice | ✅ **Recommended**                | ❌ Not recommended             |
 | Used inside   | `catch` block                    | `catch` block                 |
+
+
+Eager Loading:
+                ->eager Loading is used to load the related data along with the maindata
+                ->Data is fetched in Advanced
+                ->reuces multiple database calls
+                ->Improves performance when data is needed
+Lazy Loading:
+                ->lazy loading is used to load the data when ever it is required
+                ->data fetched on demand 
+                ->time consuming
+                ->permance might be bit slow since after call it fetches the data
+                ->More database calls
+
+
+| for                       | foreach                   |
+| ------------------------- | ------------------------- |
+| Uses index                | No index                  |
+| Can modify elements       | Cannot modify elements    |
+| More control              | Easy and readable         |
+| Best when index is needed | Best for simple iteration |
+
+
+Class
+
+                A Class is a reference type used to define objects that contain data and behavior.
+                Key Points:
+                Reference type
+                Stored in heap memory
+                Supports inheritance
+                Can contain methods, properties, constructors, destructors
+
+Struct
+
+Definition:
+A Struct is a value type used to store small data objects.
+
+                Key Points:
+                Value type
+                Stored in stack memory
+                Does not support inheritance
+                Used for small and simple data
+
+| Stack                      | Heap                   |
+| -------------------------- | ---------------------- |
+| Stores value types         | Stores reference types |
+| Faster memory              | Slower memory          |
+| Automatic allocation       | Dynamic allocation     |
+| LIFO order                 | No specific order      |
+| Memory freed automatically | Memory freed by GC     |
+
+Iemurable and Iquerable
+                Both are used to retrive the data from the database
+IEmurable:
+        ->perform filtering after data is loaded
+        ->it is used to retrive small level of database
+        Fetches all data first
+
+Iquerable 
+        ->IQuerable is to load the data at the retraival in databse level itself
+        But when we need database-level filtering and better performance, especially with large datasets, we should use IQueryable
+        Fetches required data only
+
+Global exceptions handling ->middeware ahh pottruva
+
+Garbage Collector :
+                ->Garbage collector is a memory managemnt features
+                ->it is used to remove objects that is not used in the application for longer period of time
+                ->It help to free the memory in the heap area
+                ->it helps in increase the performance
+                ->it helps prevent the memory leak
+
+Custom Exception:
+                ->User define Exception is know as custom exceptions
+                ->created by Built in Exception class
+                ->we used it when the default exception does not meets the requiremnt we will go custom exception
+
+         Why we use Custom Exceptions
+
+                To represent business rule violations
+                To provide clear and meaningful error messages
+                To improve readability, debugging, and maintainability
