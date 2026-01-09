@@ -11,6 +11,17 @@ It does not store data physically, but retrieves data from underlying tables whe
         ->brings an exact matching records
         ->Quick to locate row without exact match to the table
 
+
+CLUSTER:
+        ->sorts and stores actuall table data
+        ->only one cluster index is used in a table
+        ->usually created on primary key 
+
+Non-cluster:
+        ->stores index seperately
+        ->can have multiple non-cluster index
+        ->can contain index 
+
 3.cluster vs non-cluster
 | Feature          | Clustered Index                                                 | Non-Clustered Index                          |
 | ---------------- | --------------------------------------------------------------- | -------------------------------------------- |
@@ -81,3 +92,29 @@ SavePoint - Used to set a check point inside a transaction
         1NF → Atomic values
         2NF → No partial dependency
         3NF → No transitive dependency
+
+Composite key:
+                composite combination of combining 2 or more columns
+                ->it ensures row unique
+
+Arraysto copy()->is used to copy the array into exisitng record,copy the part of existing array
+Array.Clone()->creates a new array copy to an element,Makes a new array
+
+ref and out keyword
+
+Multithreading with .NET
+        ->Multi Threading is the process of containting multiple threads in c#
+
+
+Hash Table:
+        The Hashtable class represents a collection of key/value pairs that are organized based on the key
+        this comes under System.collection 
+        this provides various operation to be performed inside the hashtable
+
+47. Write a Features of Generics in C#?
+Generics is a technique that improves your programs in many ways such as:
+
+It helps you in code reuse, performance, and type safety.
+You can create your own generic classes, methods, interfaces, and delegates.
+You can create generic collection classes. The .NET Framework class library contains many new generic collection classes in System.Collections.Generic namespace.
+You can get information on the types used in generic data types at run-time.
