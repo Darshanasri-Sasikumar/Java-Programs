@@ -1,3 +1,13 @@
+| Feature                        | `ref` Parameter                                                                                        | `out` Parameter                                                                                                                |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Purpose**                    | Used to pass a variable **by reference** to a method, so the method can read and modify the value.     | Used to pass a variable **by reference**, but mainly to **return data** from a method.                                         |
+| **Initialization Requirement** | The variable **must be initialized** before it is passed to the method.                                | The variable **does not need to be initialized** before being passed, but the method **must assign a value** before returning. |
+| **Use Case**                   | When you want the method to **read and optionally modify** an existing value.                          | When the method needs to **output a value** back to the caller.                                                                |
+| **Value Assignment in Method** | The method **can read and write** to the variable.                                                     | The method **must assign a value** before exiting.                                                                             |
+| **Compiler Behavior**          | Compiler checks that the variable is initialized before being passed.                                  | Compiler checks that the variable is assigned a value inside the method before returning.                                      |
+| **Example**                    | `csharp<br>void Increment(ref int x) { x = x + 1; }<br>int a = 5;<br>Increment(ref a); // a becomes 6` | `csharp<br>void GetValues(out int x, out int y) { x = 10; y = 20; }<br>int a, b;<br>GetValues(out a, out b); // a=10, b=20`    |
+| **Number of Assignments**      | Can be assigned **zero or more times** inside the method.                                              | Must be assigned **at least once** before the method ends.                                                                     |
+
 Middleware:
         Middleware is a component that exists in the request–response pipeline between the client and the server.
           ->Middleware is software that sits between the client request and server response in an ASP.NET Core application.
@@ -107,30 +117,7 @@ REST API is a stateless communication mechanism that allows client and server to
 
 
 
-Got it 👍
-Since you have **3 days** and this is a **.NET Analyst interview**, I’ll give you a **clear, practical plan** (not overloaded) and focus on **commonly asked topics**.
 
-I’ll also explain *why* each topic matters, in **simple English**, as you prefer.
-
----
-
-## 🎯 What a .NET Analyst Interview Usually Tests
-
-They check:
-
-* Your **.NET & C# fundamentals**
-* Your **understanding of application flow**
-* Your **database + SQL skills**
-* Your **basic system & analysis thinking**
-* Your ability to **explain clearly** (very important for Analyst role)
-
----
-
-# 📅 3-Day Preparation Plan
-
----
-
-## 🟢 DAY 1 – C# & .NET CORE FUNDAMENTALS (Very Important)
 
 ### 1️⃣ C# Basics (Must Prepare)
 
@@ -663,6 +650,7 @@ LINQ:
 Delegates :
        Delegates defines the method signature that it points To
        it can reffer both static and non static method
+       it acts as an refference to a method
        Delegates are type-safe meaning the method signature must match the delegate declaration.
 
   when to use?
@@ -817,3 +805,116 @@ It helps you in code reuse, performance, and type safety.
 You can create your own generic classes, methods, interfaces, and delegates.
 You can create generic collection classes. The .NET Framework class library contains many new generic collection classes in System.Collections.Generic namespace.
 You can get information on the types used in generic data types at run-time.
+
+
+JWT (JSON Web Token)
+JWT is a JSON Web Token used for authentication and authorization.
+It acts as a gatekeeper after login, not during credential validation.
+
+When a user logs in, the server verifies the credentials (email & password).
+If they are correct, the server generates a JWT token and sends it to the client.
+
+The token is valid for a limited time (minutes or days).
+For every request, the client sends this token to access authorized data.
+
+If the token is valid, access is allowed.
+If the token is missing, expired, or invalid, the server returns an error
+(commonly 401 Unauthorized or 403 Forbidden, not 422).
+
+
+View data and view back set data
+Agylisys
+
+Routing:
+        Routing directs an HTTP request to the correct controller so that the appropriate response is returned.
+        Conventional Routing:Routing will be done centralized
+
+        Attribute Routing:
+        Attribute routing defines routes directly on controllers or action methods using attributes.
+        This gives more control and improves readability.
+
+What is Model Binding?
+
+Model Binding automatically takes data from an HTTP request and puts it into a model or object.
+
+ViewData:ViewData is used to pass data from Controller to View for one request only,Stored as key–value pair,Needs type casting
+
+ViewBag:ViewBag is a dynamic object used to pass data from Controller to View for one request.Useful for redirect scenarios,No type casting needed,Easier than ViewData,Works only for the current request
+
+TempData:TempData is used to pass data between two requests,Useful for redirect scenarios,Stored temporarily,Data is removed after it is read
+
+
+What is an Identity Column?
+
+An Identity column automatically generates a unique number for each new row in a table..
+->To generate auto-increment primary keys
+->To avoid duplicate IDs
+->To make insertion easier
+
+What is a Collection?
+
+A collection is an object that can hold multiple items together as a single unit.
+
+In simple words:
+👉 Like a basket that can hold many items of the same or different types.
+
+🔹 Why use Collections?
+
+To store multiple values
+
+To manipulate data easily (add, remove, search, sort)
+
+More flexible than arrays
+
+🔹 Types of Collections in C#
+1️⃣ Non-Generic Collections (System.Collections)
+Collection	Description
+ArrayList	Dynamically sized array, can store any type of objects
+Hashtable	Key-value pairs, fast lookup
+Queue	FIFO (First In First Out)
+Stack	LIFO (Last In First Out)
+
+❌ No type safety (can store any type, may cause runtime errors)
+
+2️⃣ Generic Collections (System.Collections.Generic)
+Collection	Description
+List<T>	Dynamic array, type-safe
+Dictionary<TKey,TValue>	Key-value pairs, type-safe
+Queue<T>	FIFO, type-safe
+Stack<T>	LIFO, type-safe
+HashSet<T>	Stores unique items only
+
+
+Dictionary Key:
+IT is used to store in a key-value pair 
+key should be unique and value can be duplicated
+used for
+                faster retrival of data
+                search with key will be easy
+                No duplicate keys are allowed
+
+List<t>:
+                It is used to store multiple values at the same time
+                no fixed in size
+                easy to add ,remove and update items
+
+HashSet:
+                Hashset is a collection to store unique values
+                no duplicates are allowed
+                order is not gaurantee 
+                very fast in performace
+
+
+workflows->controller->interface->service->entityframework
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IActionResult:
+                IActionResult represents the RESULT of an action method in an ASP.NET Core controller.
+                It tells what response your API or MVC action will send back to the client
+
+
+GUI->Global Unique Identifier
