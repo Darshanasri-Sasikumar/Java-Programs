@@ -916,5 +916,13 @@ IActionResult:
                 IActionResult represents the RESULT of an action method in an ASP.NET Core controller.
                 It tells what response your API or MVC action will send back to the client
 
+when we try to create or store data
+   we will be using a concept called dto (DATA TRANSFFEER OBJECT) not directly injecting the module insted creating a dto and with help of that we will be creting a data
+   why means->We use DTOs to protect, control, and shape data coming from the client.
+   To avoid :
+           1. Security risk (Over-posting)
+           2. Database structure is exposed while we inject directly
+           3.Validation becomes messy
+
 
 GUI->Global Unique Identifier
