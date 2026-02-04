@@ -930,3 +930,34 @@ GUI->Global Unique Identifier
 Iemurable
   ->used in Interface
   ->it is used to list the data alone throught a inherited class
+
+
+  explain about method hiding using "new" keyword:
+  Method Hiding in C# happens when a child class defines a method with the same name as the parent class method, and instead of overriding it, it hides it using the new keyword.
+  class Parent
+{
+    public void Show()
+    {
+        Console.WriteLine("Parent Show()");
+    }
+}
+
+class Child : Parent
+{
+    public new void Show()
+    {
+        Console.WriteLine("Child Show()");
+    }
+}
+
+Parent p = new Child();
+p.Show();   // Output: Parent Show()
+
+Child c = new Child();
+c.Show();   // Output: Child Show()
+
+In Method Hiding:
+✔ Method called depends on Reference Type (compile-time)
+
+In Method Overriding:
+✔ Method called depends on Object Type (runtime)
