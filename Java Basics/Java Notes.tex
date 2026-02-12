@@ -793,6 +793,48 @@ Abstract Method:
 
 
 
+String:
+->A string is a class which is a non-primitive Data type Present in Java.Lang Package
+->A String is a Literal ,It is a group of characters that is enclosed with in ""
+->it is a final class
+->it is inhertated from the java.lang
+In Java we can create a string by creating Instance
+    =>Java.lang.string
+    =>Java.lang.stringbuffer
+    =>Java.lang.stringbuilder
 
+When ever we create a string compiler implicity creats an instance for java.lang.string in spring pool or string constant pool
+
+STRING LITERAL
+--------------
+          Anything that is enclosed with double quotes in java is consider as string literal
+          ->when ever a string literal is used in java an instance is created in java.lang.string
+          ->for the given string literal,if the instance of a string is already present ,then new instance is not created instant the reffernce of a existing instance is given
+
+CHARACTERSTICS OF STRING :
+              ->Instance of a string class is immutable in nature 
+              ->if we try to modify the state/data then new object is created and refference is given
+              ->if we want to mute we will have String buffer and string builder
+
+
+Comparison of string:
+          ==  comparies the refference
+          equals() compares states and Objects
+          equals Ignore case()  compares the states and datas of the object
+
+
+StringBuffer Class:
+          ->It is a inbuilt class bu java.lang package
+          ->It is a final class
+          ->It helps in creating mutable instance of a string
+          ->String buffer does not have scp
+          ->It inherits java.lang.Object classes
+          ->In string buffer equal(),hashcode() methods of java.lang.Object class are Overridede
+
+
+String Buffer                                                                                                   String builder
+All the method present in string buffer is synchronized                                             All the methods prest inside the string is non-synch
+At a time Only one thread is allowed to access stringbuffer Object heans                            At a time multiple thread is allowed to Access string Buffer
+it is thread safe                                                                                   idea
 
 
