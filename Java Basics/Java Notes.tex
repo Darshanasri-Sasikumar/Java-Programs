@@ -1027,9 +1027,97 @@ finally
           }
 
 finlize()
-       it is method which  Acts as an garbage collector
+      finalize() is a method in Java that is called by the Garbage Collector (GC) before an object is removed from memory
           when ever it is been called it checks for unused object and it gets cleaned
+
+Why it is NOT recommended now?
+          Garbage Collector may not call it immediately
+          It may never get called
+          It causes performance issues
+
+we can use try catch finally insted
+
+==================================================================================================================================================================
+Exception:
+          A sudden stop or upnormal stop occurs is a program is known as Exception
+          exception can be handeled with the help of try,catch and finally block
+          Throwable is parent most class for all exception 
+          we have 2 types of Exception
+                    ->checked Exception
+                    ->Unchecked Exception
+
+Checked Exception:
+          Compiler Aware Exceptions are known as checked exception
+          It should be directly inherited from the parent class is know as checked exception
+
+          example are:
+                    ->class not found
+                    ->file not found
+
+          public class main{
+                    p.s.v.m(s[]a){
+                    try{
+                       FileReader fr = new FileReader(java.txt);
+                       s.o.pln("File opened succefully");
+                       catch(Exception e){
+                        s.o.pl("File not found");
+                        }
+
+Unchecked Exception:
+          ->Compiler unaware exceptions are know as Unckeced Exception
+          ->Arithmatic exception
+
+          public main class{
+                     p.s.v.m(){
+                     try{
+                      int a =10;
+                      int b=20;
+                      }catch(Arithmatic Exception e){
+                        System.out.println("cannot divede by 0);
+                        }
+
+
+throw:
+          ->it is a keyword 
+          ->which is used to throw exception manually
+          ->it is used to throw checked and uncked and unchecked exception it is used to throw custom exceptions
+          ->it is used to throw exception one by one
           
+Custom Exception
+-----------------
+                    class InvalidAgeException extends Exception {     
+                                  InvalidAgeException(String msg) {
+                                      super(msg);
+                                  }
+                              }
+
+                              public class Main {
+                                  static void checkAge(int age) throws InvalidAgeException {
+                              
+                                      if (age < 18) {
+                                          throw new InvalidAgeException("Age must be 18 or above");
+                                      } else {
+                                          System.out.println("Eligible for voting");
+                                      }
+                                  }
+                              
+                                  public static void main(String[] args) {
+                              
+                                      try {
+                                          checkAge(16);
+                                      } catch (InvalidAgeException e) {
+                                          System.out.println("Custom Exception: " + e.getMessage());
+                                      }
+                                  }
+                              }
+ throws:
+           ->it is used to throw mulitiple exception at the same time
+
+
+
+
+exception propgation
+          The Process of Moving one exception process to another exception 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 1.what is a thread?
@@ -1070,3 +1158,12 @@ No - static method cannot overiide because override occurs during run time
 
 what happens when a constructor calls an override method?
 When a constructor calls an overridden method, the child’s overridden method executes due to dynamic binding, but the child’s fields may not be initialized yet, so it can give wrong output or NullPointerException.
+
+Tight coupling vs loose coupling
+
+An abstract class can have constructor?
+yes an object is been created therefore we can have a default construcot
+
+why interface variable are public static and finall by default
+interface variables are public static final by default because they are constants shared by all classes and should not be change
+
