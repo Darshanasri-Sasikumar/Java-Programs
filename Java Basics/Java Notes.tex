@@ -1112,6 +1112,9 @@ Custom Exception
                               }
  throws:
            ->it is used to throw mulitiple exception at the same time
+           ->It is used to declare an exception
+           ->It is used after Method Signature
+           ->Io exception and SQl exception
 
 
 
@@ -1139,6 +1142,150 @@ Runnable->Start() it gets executed
 Running ->JVM gives CPU time and thread starts executing
 wait/block->Thread waits for lock or resource
 terminated->dead
+
+==================================================================================================================================================================
+Collection FrameWork:
+          ->It is a collection of classes and Interface
+          ->It is a readymade architecture to store the object into collection
+          ->since array is in fixed size to over come the disadvatange of array we went into collection Framework
+
+Array dis-advatnage
+          ->size of an array is fixed
+          ->it is homogenous element
+          ->searching sort or removing a in array is complex
+
+Collection Framework
+                    ->List
+                    ->set
+                    ->Queue
+                    ->Map/Dictnory
+
+Collection:
+          It is an interface
+          Present in Java .util.package
+          It is a set of interface to store group of elemets
+          All the elements in a collection is stored in a group of elements
+          It allows 4 Operation
+                    ->add an element
+                    ->search
+                    ->remove
+                    ->view an element in a collection
+
+List:
+          List is an interface present in java.util package
+          It is a subInterface of Collection Framework
+          therfore every method is inherited
+
+Characterstics of list:
+          ->List maintains Insertion order
+          ->it allows Duplicaate entries
+          ->List allows indexing therfire it is used to search,remove,acces or list the elements
+          ->it starts from 0 to -1
+
+          From pg:369
+
+          public class ListArray{
+                    p.s.v.m(s[]a){
+                              array a = new ArrayLisr();
+                              a.add(1);
+                              a.add(2);
+                              a.add(3);
+                              s.o.pln(a);
+                              }
+                    }
+          public class ListArray{
+                    public static void main(String[]args){
+                              Array a = new ArrayList();
+                              a.add(1);
+                              a.add(2);
+                              System.out.println(a);
+                              Array b = new ArrayList();
+                              b.add('a');
+                              b.add('b');
+                              System.out.println(b)
+                              a.addall(b);
+                    }
+
+          To search:
+          use contains()
+          like a.contains("happuy");
+          To remove 
+          use a.remove(b);
+          to remove all
+          use a.clear()
+
+          1.get(index)
+          2.set(index, value)->update
+          3.size()
+          4.isEmpty()
+          5.clear()
+          6.indexOf(value)
+          7.lastindexOf(value)
+          8.contains(value)
+          9.remove(value)
+
+          Most used add ,get ,set remove and contains
+
+          There are 2 type 
+                    ->Homogenous 
+                    ->hetrogenous
+
+          ->homogenous element support generics
+
+
+Types of list
+          ->Array list
+          ->Linked List
+          ->vector
+          ->stack
+
+          Array List:
+             ->It is used for dynamic array
+             ->Faster for reading and accessing
+             ->
+
+          Collection->It is an interface
+                     ->present in java.util.collection
+                     ->group of collection
+
+           Collections
+                     ->It is a class 
+                     ->present in java.util.collections
+                     ->group of methods
+
+Array List                                         Linked List                               stack                               vecktor
+->It is an class drived from list | ->It is an interface drived from list | ->It is an interface drived from list |->It is an interface drived from list
+->dynamic arrya                       | ->doubly linked list                  |->it follows LIFO
+->insertion order is maintain         | ->insertion and deleting is easy in mid|->main operation push(),pop(),peak()|
+->slowe for inerting ande deleting in |->slower for accessing since no index   |
+middle
+->stores the data in the form of array|->stores the data is the form of node
+->growable and re-sizable             |->nodes are not growable
+
+
+| Feature                 | **ArrayList**         | **LinkedList**             | **Vector**              | **Stack**                    |
+| ----------------------- | --------------------- | -------------------------- | ----------------------- | ---------------------------- |
+| Type                    | Class                 | Class                      | Class                   | Class                        |
+| Derived From            | Implements **List**   | Implements **List, Deque** | Implements **List**     | Extends **Vector**           |
+| Internal Structure      | **Dynamic Array**     | **Doubly Linked List**     | **Dynamic Array**       | **LIFO (Stack)**             |
+| Access Speed            | ✅ Fast (index based)  | ❌ Slow (traversal)         | ✅ Fast (index based)    | ✅ Fast (top element)         |
+| Insert/Delete in Middle | ❌ Slow (shifting)     | ✅ Fast                     | ❌ Slow                  | ❌ Not used for middle insert |
+| Insertion Order         | ✅ Maintained          | ✅ Maintained               | ✅ Maintained            | ✅ Maintained                 |
+| Thread Safe             | ❌ No                  | ❌ No                       | ✅ Yes (synchronized)    | ✅ Yes (because Vector)       |
+| Memory Usage            | ✅ Less                | ❌ More (extra pointers)    | ✅ More than ArrayList   | Same as Vector               |
+| Best Use                | Searching / Accessing | Frequent insert/delete     | Multithread environment | LIFO operations              |
+
+set:
+ ->it is an interface from collection
+ ->it does not allow duplicates
+ ->it accepts only unique elemets
+ ->No indexing like list
+ ->It is an unorder collection of data order of insertion is not followed
+ ->since it does not follow indexing insertion and remove an element is diffcult
+ hasset and tree set are example
+ Linked HashSet                                                         |                             tree set
+ ->it is an implemenation class of set
+
 
 
 
