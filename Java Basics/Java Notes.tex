@@ -1316,8 +1316,77 @@ Queu:
                     peak()
 
 
-          
+Map:
+          It is an interface present in java.util packge
+          Map is not part of collection framework
+          Map is a data structure ,which helps developer to store data in the form of key and value pair
+          key should be unique and value can be duplicated
+          No indexing
+          one key can be assingned to only one value
 
+   what is an entry?
+             one key and value is called key entry
+             ->put()
+             ->putall()
+             ->clear()
+             ->remove()
+             ->get()
+             ->isempty()
+             ->equals()
+
+ hashMap():
+           ->It is a class implemented from the the map interface
+           ->present in java .util
+           ->insertion order is not maintain
+           ->It is present in the form of key and value pair
+           ->key cannot be duplicated and values can be duplicated
+           ->16 ->size
+           ->not synchronized
+
+  import java.util.*;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+
+        HashMap<Integer, Integer> hm = new HashMap<>();
+
+        hm.put(1, 1);
+        hm.put(1, 2);   // key is same, so value will be replaced
+
+        System.out.println(hm);  // {1=2}
+    }
+}
+
+Hash Table:
+          ->->It is a class implemented from the the map interface
+           ->present in java .util
+             ->insertion order is not maintain
+             ->key and value should not be null it provide null pointer exception
+             ->synchronized
+
+Tree Mao():
+          ->It is an a class implemented in java.util packge
+          ->it is implemented from Map interface
+          ->present in form of key value pair
+          ->it sorts the data in ascending order
+          ->the key tree map should be comparable type if it is not it will cause class cast exception
+          ->key cannot be null it will cause null pointer exception
+
+LinkedHashMap:
+
+          ➝ Class implements Map
+          ➝ ✅ Insertion order maintained
+          ➝ Keys are unique
+          ➝ Allows 1 null key and multiple null values
+          ➝ Output is predictable
+          ➝ Slightly slower than HashMap (extra memory)
+
+Failfast: and fail safe
+what if we override equals() but not hashcode function
+concurrent hashmap()
+comparable and comparater
+Iterator:
+          
 
 
 
