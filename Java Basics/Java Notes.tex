@@ -1170,7 +1170,7 @@ Collection Framework
 Collection:
           It is an interface
           Present in Java .util
-          It is a set of interface to store group of elemets
+          It is a set of interface to store group of elemets(with the name we could know that is a collection/group of elements) Framework is nothing but ready made architecture
           All the elements in a collection is stored in a group of elements
           It allows 4 Operation
                     ->add an element
@@ -1188,6 +1188,16 @@ Characterstics of list:
           ->it allows Duplicaate entries
           ->List allows indexing therfire it is used to search,remove,acces or list the elements
           ->it starts from 0 to -1
+          ->it allows int,string,char,double all primitive data types
+
+Methods of List
+           ->add()->a.add(3);
+           ->addAll()->a.addAll(b);
+           ->contains()-> executes true or false it states the value is present or not
+           ->remove()->a.remove(2);
+           ->removeAll()->a.removeAll(b);
+           ->get()->to fetch the element->get(index element);          
+          
 
           From pg:369
 
@@ -1247,6 +1257,7 @@ Types of list
           ->stack
 
           Array List:
+             ->It is a concreate implement class of list interface
              ->It is used for dynamic array
              ->Faster for reading and accessing
              ->
@@ -1260,14 +1271,17 @@ Types of list
                      ->present in java.util.collections
                      ->group of methods
 
+                     
+
 Array List                                         Linked List                               stack                               vecktor
-->It is an class drived from list | ->It is an interface drived from list | ->It is an interface drived from list |->It is an interface drived from list
-->dynamic arrya                       | ->doubly linked list                  |->it follows LIFO
-->insertion order is maintain         | ->insertion and deleting is easy in mid|->main operation push(),pop(),peak()|
+->It is an class drived from list | ->It is an CONCREATE class drived from list | ->concreate class of vector |->It is an interface drived from list
+->dynamic arrya                       | ->doubly linked list  (Nodes)                |->it follows LIFO  | Stores data in a dynamic array
+->insertion order is maintain         | ->insertion order maintain and deleting is easy in mid|->main operation push(),pop(),peak()|
 ->slowe for inerting ande deleting in |->slower for accessing since no index   |
 middle
 ->stores the data in the form of array|->stores the data is the form of node
 ->growable and re-sizable             |->nodes are not growable
+->Faster for accessing elements (indexing)|slowe to access                   |push()->add         |similar to array list
 
 
 | Feature                 | **ArrayList**         | **LinkedList**             | **Vector**              | **Stack**                    |
