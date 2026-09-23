@@ -1337,6 +1337,17 @@ Queu:
                     peak()
 
 
+| Feature            | `HashSet`         | `LinkedHashSet`          | `TreeSet`                       |
+| ------------------ | ----------------- | ------------------------ | ------------------------------- |
+| Duplicate elements | ❌ Not allowed     | ❌ Not allowed            | ❌ Not allowed                   |
+| Insertion order    | ❌ Not maintained  | ✅ Maintained             | ❌ Not maintained                |
+| Sorting            | ❌ No              | ❌ No                     | ✅ Sorted                        |
+| Performance        | Generally fastest | Slightly slower          | Generally slower                |
+| `null`             | Allows one `null` | Allows one `null`        | Generally does not allow `null` |
+| Main use           | Unique elements   | Unique + insertion order | Unique + sorted order           |
+
+
+
 Map:
           It is an interface present in java.util packge
           Map is not part of collection framework
