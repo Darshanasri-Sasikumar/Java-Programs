@@ -956,7 +956,7 @@ In Java we can create a string by creating Instance
     =>Java.lang.stringbuffer
     =>Java.lang.stringbuilder
 
-When ever we create a string compiler implicity creats an instance for java.lang.string in spring pool or string constant pool
+When ever we create a string. Compiler implicity creats an instance for java.lang.string in spring pool or string constant pool
 
 STRING LITERAL
 --------------
@@ -1330,26 +1330,30 @@ Tree set:
           ->while sorting either it should be in char or in integer (same data type only)
 
 Queu:
+2 types 1.priority Queu,2. Dequeu->1.Array Dequeu
           Queu is an interface
+          It is a collection to store elements
+          
           follows first in first out
           main method:
                     add()
+                    offer()->add an element
                     remove()
                     peak()
 
 
-| Feature            | `HashSet`         | `LinkedHashSet`          | `TreeSet`                       |
-| ------------------ | ----------------- | ------------------------ | ------------------------------- |
-| Duplicate elements | ❌ Not allowed     | ❌ Not allowed            | ❌ Not allowed                   |
-| Insertion order    | ❌ Not maintained  | ✅ Maintained             | ❌ Not maintained                |
-| Sorting            | ❌ No              | ❌ No                     | ✅ Sorted                        |
-| Performance        | Generally fastest | Slightly slower          | Generally slower                |
-| `null`             | Allows one `null` | Allows one `null`        | Generally does not allow `null` |
-| Main use           | Unique elements   | Unique + insertion order | Unique + sorted order           |
+| Feature            | `HashSet`         | `LinkedHashSet`          | `TreeSet`                         |
+| ------------------ | ----------------- | ------------------------ | -------------------------------   |
+| Duplicate elements | ❌ Not allowed     | ❌ Not allowed            | ❌ Not allowed                |
+| Insertion order    | ❌ Not maintained  | ✅ Maintained             | ❌ Not maintained             |
+| Sorting            | ❌ No              | ❌ No                     | ✅ Sorted                     |
+| Performance        | Generally fastest | Slightly slower           | Generally slower                |
+| `null`             | Allows one `null` | Allows one `null`        | Generally does not allow `null`  |
+| Main use           | Unique elements   | Unique + insertion order | Unique + sorted order            |
 
 
 
-Map:
+Map:       
           It is an interface present in java.util packge
           Map is not part of collection framework
           Map is a data structure ,which helps developer to store data in the form of key and value pair
