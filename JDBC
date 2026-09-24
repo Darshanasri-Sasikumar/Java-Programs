@@ -83,8 +83,24 @@ stmt.close;
 
 Statement vs prepared statements
 
-Statements are used for static SQL Querries
-Preapared statement are used for dynamic querries
-it also uses place holders
+Statement
+→ Used to execute static SQL queries.
+
+PreparedStatement
+→ Used to execute parameterized SQL queries.
+→ Uses placeholders (?) for dynamic values.
+→ Values are supplied using methods like setInt(), setString(), etc. 
+Insert Example for preapred stmt:
+PreparedStatement ps =
+    con.prepareStatement(
+        "INSERT INTO employee(name, salary) VALUES (?, ?)"
+    );
+
+ps.setString(1, "Darshana");
+ps.setDouble(2, 30000);
+
+int rows = ps.executeUpdate();
+
+System.out.println(rows);
 
 
