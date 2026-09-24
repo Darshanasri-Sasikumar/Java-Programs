@@ -81,5 +81,10 @@ rs.close;
 con.close;
 stmt.close;
 
+Statement vs prepared statements
+
+Statements are used for static SQL Querries
+Preapared statement are used for dynamic querries
+it also uses place holders
 
 
