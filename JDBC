@@ -1,2 +1,85 @@
 JDBC:Java Database Connectivity
   ->it is an Api between the Application and the database
+  ->It allows us to use SQL querries
+  ->Insert
+  ->update
+  ->delete
+  ->fetch
+JDBC present in Java.SQL package
+
+
+JDBC Classes and Interface:
+----------------------------
+      ->Driver Manager
+      ->Connection
+      ->statement
+      ->Prepared statement
+      ->Result set
+      ->SQL statement
+
+There are 5 steps in JDBC:
+      ->Load the Driver
+      ->Establish Connection
+      ->Create statement
+      ->Execute Querry 
+      ->Close the Connection
+
+
+Step1: Load the driver ->class.forname()
+  Class.forName("com.mysql.cj.jdbc.Driver");
+Explanation:
+  Class.forName() → Load the MySQL JDBC Driver class.
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+---------------------------------------------|
+Class       → Java Class class               |
+forName()   → Loads a class using its name   |
+com         → Package                        |
+mysql       → MySQL                          |
+cj          → MySQL Connector/J              |
+jdbc        → JDBC package                   |
+Driver      → MySQL JDBC Driver class        |
+---------------------------------------------|
+
+Step 2: Establish Connection:Driver Manager.get Connection()
+
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/studentdb",
+    "root",
+    "root"
+);
+
+step 3: Create Statement:
+Statement stmt = con.createStatement();
+---------------------------------------------------------------------------|
+Statement stmt = con.createStatement();`                                   |
+│         │       │                                                        |
+│         │       └── createStatement() → creates a Statement object       |
+│         └────────── variable that stores the Statement object            |
+└──────────────────── Statement → JDBC interface                           |
+---------------------------------------------------------------------------|
+
+step 4:Execute Querry:
+ResultSet stores the result returned by a SELECT query.
+ResultSet rs = stmt.executeQuery();
+EX:
+ResultSet rs = stmt.executeQuery(
+    "SELECT * FROM employee"
+);
+
+Step 5:Close the stmt:
+rs.close();
+con.close();
+
+
+In Short
+class.forname(com.mysql.cj.jdbc.Driver);
+Connection con = DriverManager.getConnection();
+Statement stmt = createStatement();
+ResultSet rs = stmt.executeQyerry();
+rs.close;
+con.close;
+stmt.close;
+
+
+
