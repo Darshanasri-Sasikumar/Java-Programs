@@ -1,5 +1,5 @@
 JDBC:Java Database Connectivity
-  ->it is an Api between the Application and the database
+  ->JDBC (Java Database Connectivity) is a Java API used to connect Java applications with relational databases and execute SQL statements.
   ->It allows us to use SQL querries
   ->Insert
   ->update
