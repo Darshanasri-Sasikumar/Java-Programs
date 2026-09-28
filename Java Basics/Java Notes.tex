@@ -1436,7 +1436,37 @@ concurrent hashmap()
 comparable and comparater
 Iterator:
           
+----------------------------------------------------------------------------------------------------------------------------------------------
+Thread:
+---------
+          ->Thread is a smallest unit of program /process
+          ->A program can have multiple threads performing different task
+          
+Multithreading:
+---------------
+          ->It is a java feature
+          ->the program has multiple threads performing various/different task is know as multi threading within the same process
+why Multithreading:
+------------------
+          ->Time saving
+          ->Increases in perfomance by doing multiple task at the same time
+          ->Resource sharing
+          ->Responsiveness->Application can remain responsive while background work runs
 
+Does Java Automatically creates thread?
+---------------------------------------
+          yes,when the application start,jvm creates a main thread which executes the main() method.
+
+
+Example program:
+----------------
+public class Multiprog {
+	public static void main(String[]args) {
+		System.out.println("hi from main");
+		 System.out.println(Thread.currentThread().getName());
+	}
+
+}
 
 
 
