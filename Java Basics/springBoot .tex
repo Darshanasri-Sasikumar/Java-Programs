@@ -33,7 +33,85 @@ Spring:
 4.Dependecy Injection:
          providing the needed thing outside the class than creating it inside the class is know as depenedency injection
          Dependency Injection is the process of providing the required dependency of a class from outside instead of creating it inside the class.
+5.Spring Container:
+        creating Object
+        Managet the objecs
+        Injecting dependency
+        manageing bean life cycle
+        
+Types of spring Container:
+------------------------
+        1.Spring Factory
+        2.Application Context
+===================================================================================================================================================
+Bean
+----
+        bean is an object managed by spring container
+        
+        Example:
+        
+        @Service
+        class EmployeeService {
+        
+        }
+        Spring creates an object of EmployeeService and manages it.
 
+        That object is called a Spring Bean.
+
+        Class
+          ↓
+        @Service
+          ↓
+        Spring Container
+          ↓
+        Object created
+          ↓
+        Spring Bean
+
+Component Annotation
+        1.@service->it is used to write business logics inside the class
+        2.@repository->Handels database request and response
+        3.@controller->use to handel web request and response 
+        4.@Component tells Spring that the class should be managed by the Spring Container.
+        5.@RestController->It is used to create rest API's 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 Spring Boot:
 --------------
         Spring boot is an Frame Work for Java that is build on top of Spring that simplifies Application Development
