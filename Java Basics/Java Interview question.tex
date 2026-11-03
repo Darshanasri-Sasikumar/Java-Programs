@@ -391,6 +391,93 @@ JAVA INTERVIEW QUESTIONS (BIG LIST – NO REPEATS)**
 
 106. Without using loop print numbers 1–100.
 107. Swap two strings without using third variable.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+1.How Does HashMap Works Internallly?
+    ->Hash Map stores the data into key value pair
+    ->It is a combination of 
+            1.array block
+            2.Hashing
+            3.HashMap
+            4.Equals 
+            5.Linked list
+            6.collision
+            
+    ->Hash Map uses array of bucket to store the data in key value pair
+    ->when we insert the data in key and value using put() method,HashMap calls the hashcode() first to generate hash value
+    ->Using the hashvalue ,it calculates the bucket index and stores the data key-value according to the index
+    ->If two key gets same index ,a situatio called collision occurs,hash map handels using Linkedlist() or
+    Suppose two different keys generate the same bucket index.This is called a Hash Collision.
+    ->HashMap handles collisions using a LinkedList. Under certain conditions, it converts the LinkedList into a Red-Black Tree.
+    4. What is the role of equals()?
+    Suppose two keys have the same hash value.
+    HashMap uses equals() to check whether the keys are actually equal.
+    - If keys are equal, the old value is replaced with the new value.
+    - If keys are different, both entries are stored in the same bucket.
+    
+2.Difference between Equals() and HashCode()
+    HashCode:
+        hashCode() generates a hash value for the key.
+        HashMap uses that hash value to calculate the bucket index.
+        It does not remove duplicates.
+        equals() is used to check whether keys are equal.
+        
+    equals:    
+         Suppose two keys have the same hash value.
+        HashMap uses equals() to check whether the keys are actually equal.
+        - If keys are equal, the old value is replaced with the new value.
+        - If keys are different, both entries are stored in the same bucket.
+        
+3.What is Functional Interface
+        An Interface which has single Abstract class
+        multiple static method
+        multiple default method
+        with @FunctionalInterface annotation which is optional
+        
+        for example
+        class ex{
+        abstract void method 1();
+        static  void print1(){
+        S.O.PLN("hi");}
+        defualt void method(){
+        S.O.PLN("print")}
+        }
+        
+        why do we us3 functional Interface means:
+            To reduce code and implement Lambda expression
+            
+4.How many default method can have any functional interface can have?
+ any numbers
+ 
+5.Can we override method with different access modifier in the child class?
+    Yes! We can override a method with a different access modifier in the child class, but we cannot reduce the visibility of the parent class method.
+    for ex:
+    class Parent {
+    protected void display() {
+        System.out.println("Parent");
+    }
+    }
+    class Child extends Parent {
+    public void display() {
+        System.out.println("Child");
+    }
+    }
+    
+    Not public to protected
+    
+6.what is method Overriding?
+    A method having same name , same parameter implemented in different class is know as method overriding
+    it is a run time polymorphism
+    @Override annotation is used
+    
+7.What is Singleton Design Pattern?
+
+
+
+
+8.How can I identitfy wheather a specific element present in a list of 10 lakh record with min iteration
 108. Print repeated elements in array without using extra space.
 109. Shuffle array elements randomly.
 110. Generate OTP of 6 digits.
