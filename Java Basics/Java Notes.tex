@@ -1493,4 +1493,227 @@ yes an object is been created therefore we can have a default construcot
 
 why interface variable are public static and finall by default
 interface variables are public static final by default because they are constants shared by all classes and should not be change
+--------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------Stream-----------------------------------------------------------------------------------------------
+1.What is stream API?
+->It is a feature introduced in java 8
+->it is used to process collection of data in functional programming style
+->it is used for operations like filtering,sorting,mapping,collecting
+
+
+For example:
+class stream{
+public static void main(String[]args){
+ArrayList<Integer>number = Arrays.asList(10,20,30,40,50);
+number.stream().filter(num -> num > 30).forEach(System.out::println());
+}
+}
+
+
+stream() creates a Stream.
+filter() filters the values.
+forEach() prints the result.
+
+
+2.why do we use streams?
+->It reduceses boilerplate code
+->Makes code more reusable
+->Supports functional programming
+->makes filtering and transforming data easier
+->provides reusable processing operations
+
+
+3.Collection VS Streams
+
+
+Collection	                                 Stream
+Stores data	                                 Processes data
+Can be reused	                             Cannot be reused after consumption
+Supports adding/removing elements	         Does not add/remove source elements
+Can access elements multiple times           Processes elements through a pipeline
+Eagerly stores elements	                     Operations are generally lazy
+
+
+
+
+4.what is a stream pipeline?
+A stream pipeline is a sequence of operations to perform on data
+it consist of 3 important stages
+->source 
+->intermediate
+->terminal
+
+
+5.How many ways to create streams?
+There are 6 ways to create streams
+1.Collection.stream()
+2.Stream.of()
+3.Arrays.stream()
+4.Stream.empty()
+5.Stream.generate()
+6.Stream.iterate()
+
+
+
+
+6.What is Lazy Evaluation?
+Lazy Evaluation means Stream API will not execute intermediate operations immediately. It waits until a terminal operation is called.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Intermediate Operations:
+1.filter()->it is used to filter the number using condition
+Example:
+public class Main {
+    public static void main(String[] args) {
+
+
+        List<Integer> numbers =
+            Arrays.asList(10, 15, 20, 25, 30);
+
+
+        numbers.stream()
+               .filter(n -> n % 2 == 0)
+               .forEach(System.out::println);
+    }
+}
+
+
+2.map()->It is used to transform a value to another value in stream
+Example 1:
+List<Integer> num = Arrays.asList(10,20,30,40);
+num.stream().map(n -> n*2).forEach(System.out::println);
+Example 2:
+List<String> names =Arrays.asList("arun", "bala", "david");
+names.stream().map(name -> name.toUpperCase()).forEach(System.out::println);
+
+
+3.flatMap()->It is used to transform multiple data collection or streams into one flat stream.
+public class flatmap {
+public static void main(String[]args) {
+  List<List<Integer>>num = Arrays.asList(Arrays.asList(10,20),Arrays.asList(10,20),Arrays.asList(10,20));
+  num.stream().flatMap(list->list.stream()).forEach(System.out::print);
+}
+}
+4.distinct()->removes duplicate from the stream
+public class distinct {
+	public static void main(String[]args) {
+		List<Integer>num = Arrays.asList(10,20,10);
+		num.stream().distinct().forEach(System.out::println);
+	}}
+5.sort()->It is used to sort the element in ascending order
+Example (Ascending order)
+	List<Integer> numbers =Arrays.asList(50, 10, 40, 20, 30);
+	numbers.stream().sorted().forEach(System.out::println);
+Example for decending:
+numbers.stream()
+       .sorted(Comparator.reverseOrder())
+       .forEach(System.out::println);
+	   
+6.limit()->It is used to restrict the limit in stream
+List<Integer> numbers =
+    Arrays.asList(10, 20, 30, 40, 50);
+
+
+numbers.stream()
+       .limit(3)
+       .forEach(System.out::println);
+	   
+7.skip() is used to skip the first N elements in a Stream.
+List<Integer> numbers =
+    Arrays.asList(10, 20, 30, 40, 50);
+
+
+numbers.stream()
+       .skip(2)
+       .forEach(System.out::println);
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Terminal Operations
+	1.forEach()
+	2. collect()
+	3. toArray()
+	4. count()
+	5. min() and max()
+	6. findFirst() and findAny()
+	7. anyMatch(), allMatch(), noneMatch()
+	8. reduce()
+	
+1.Foreach()->It is used to iterate every function in the stream
+			->It performs an action on every element.
+			
+			
+2.collect()->Used to collect Stream elements into a collection or another result.
+			->Commonly used as collectors
+	Example:
+			List<Integer> numbers = Arrays.asList(10, 20, 30, 40);
+			List<Integer> result = numbers.stream().filter(n -> n > 20).collect(Collectors.toList());
+			System.out.println(result);
+			
+3. toArray()->Used to collect stream elements into an array
+Example:
+List<Integer> numbers = Arrays.asList(10, 20, 30);
+Object[] result = numbers.stream().toArray();
+System.out.println(Arrays.toString(result));
+
+
+4. count()->Used to count the number of elements in a Stream.
+		  ->Returns a long value.
+	Example:
+	List<Integer> numbers = Arrays.asList(10, 20, 30, 40);
+
+
+long count = numbers.stream()
+                    .filter(n -> n > 20)
+                    .count();
+
+
+System.out.println(count);
+
+
+5.min() and max()
+min() finds the smallest element.
+max() finds the largest element.
+Both return an Optional.
+Example
+	List<Integer> numbers = Arrays.asList(10, 50, 20, 80, 30);
+	Optional<Integer> min = numbers.stream().min(Integer::compareTo);
+	Optional<Integer> max = numbers.stream().max(Integer::compareTo);
+	System.out.println(min.get());
+	System.out.println(max.get());
+
+
+6. findFirst() and findAny()
+findFirst() returns the first element in the Stream.
+findAny() returns any element from the Stream.
+Both return Optional.
+Example:
+	List<Integer> numbers = Arrays.asList(10, 20, 30, 40);
+	Optional<Integer> first = numbers.stream().findFirst();
+	Optional<Integer> any = numbers.stream().findAny();
+	System.out.println(first.get());
+	System.out.println(any.get());
+
+
+7. anyMatch(), allMatch(), noneMatch()
+These methods are used to check conditions and return a boolean value.
+Example:
+	List<Integer> numbers = Arrays.asList(10, 20, 30, 40);
+	boolean any = numbers.stream().anyMatch(n -> n > 30);
+	boolean all = numbers.stream().allMatch(n -> n > 5);
+	boolean none = numbers.stream().noneMatch(n -> n < 0);
+	System.out.println(any);
+	System.out.println(all);
+	System.out.println(none);
+	
+8. reduce()
+		Used to combine all elements into a single result.
+		Commonly used for sum, multiplication and finding cumulative results
+		
+Example:
+	List<Integer> numbers = Arrays.asList(10, 20, 30, 40);
+	int sum = numbers.stream().reduce(0, (a, b) -> a + b);
+	System.out.println(sum);
+
 
