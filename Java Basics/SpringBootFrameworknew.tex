@@ -8,8 +8,14 @@ Day1:SpringBoot Introduction:
                ->Database Configuration
                ->Onject creation and dependency Injection
 
+
+
+
         what is meant by Standalone Application?
         Standalone application can run independently with out any external server or container.
+
+
+
 
     1.Definition:
      ----------
@@ -18,11 +24,14 @@ Day1:SpringBoot Introduction:
     2.Spring VS Spring Boot:
     ----------------------
         Spring Framework	                     Spring Boot
-           
+           Core Java Framework					 Build on Spring framework
             More manual configuration	         Less manual configuration
-            Dependencies managed individually	 Starter dependencies
+          Dependency are configured induvidually	 Starter dependencies
             Server setup can be separate	     Embedded server support
             More initial setup	                 Faster project setup
+
+
+
 
     3.Important Features of Spring Boot:
     ---------------------------------
@@ -30,6 +39,87 @@ Day1:SpringBoot Introduction:
             2.Standalone Applications
             3.Embedded Server Support
             4.Production-ready features
+			
+			
+	4.Springboot Architecture:
+	-------------------------
+		Client->controller layer->service->repository->database
+		
+	5.Features of Springboot:
+	-------------------------
+		1.Auto Configuration
+		2.Less Manual setup
+		3.Embedded server
+		4.Standalone application ->Runs independently without an external server
+		5.Production-ready application
+		6.Easy Development
+		
+		
+	6.What is Autoconfiguration?
+	------------------------------
+	Springboot automatically configures the application based on dependencies
+	Example:
+		- If we add Spring Web dependency, Spring Boot configures web-related components.
+		- If we add JDBC dependency, Spring Boot configures database-related components (based on available configuration).
+		
+	7.what is started dependencies?
+	---------------------------------
+	Started dependencies are group of dependencies bundeled together is know as started dependencies
+	
+	8.what is Embedded server?
+	-------------------------
+	An embeded server is a server which is included insider the springboot application
+	for example :we need not up the tomcatserver and put inside the application,spring boot automatically does that
+	Normally we deploy application into external server,in springboot we can run server inside itself
+	
+	For example:
+		mvn spring-boot:run
+		
+	9.what is spring Intiallizer?
+	It gives us the project stucture along with the selected dependencies through online
+	
+	10.what is pom.xml and maveen?
+	POM stands for project object model
+	it is the main configuration file used by maveen
+	
+	it contatins
+		->project details 
+		->java version
+		->dependencies
+		->Build configuration
+			
+		such as group_id,artifact_id ,version
+		
+	11.application.properties vs application.yml
+	application properties store in the form of key value pair 
+	application.yml stores in indendation formate
+	application.properties	                  application.yml
+	---------------------------------------------------------------------
+		Key-value format	                    Indentation format
+		Uses =	                                Uses :
+		Simple structure	                    Easy to organize nested properties
+		Less readable for complex configuration	More readable for complex configuration
+		
+		
+		
+	12.What is IOC?
+		1.IOC means ->Inversion Of Control
+		2.It is used for creating and managing the objects is transffered from the programmer to springboot container
+		
+	why do we need IOC?
+		 we Need IOC for
+			->Tight coupling 
+			->Simplifying Object creation and management
+			->Improve maintability
+    Who creates and manages objects in Spring?
+			->The Spring IoC Container creates, configures, and manages Spring beans.
+
+
+	What is the difference between IoC and DI?
+			->IOC is used to create and manage the object in spring container
+			->DI used to utilise the object from other 
+
+
 
 
     @SpringBootApplication Annotation:
@@ -39,6 +129,9 @@ Day1:SpringBoot Introduction:
                 1.@Configuration
                 2.@EnableAutoConfiguration
                 3.@ComponentScan
+
+
+
 
     @RestController Annotation:
     ------------------------------- 
@@ -50,11 +143,9 @@ Day1:SpringBoot Introduction:
                 ->Controller is used for MVC architecture
                 ->Needs Response body for Direct data
 
+
+
+
                 ->Restcontroller is used for RestAPI's
                 ->Returns direct data
                 ->It is a combination of controller and response body
-
-
-
-   
-
