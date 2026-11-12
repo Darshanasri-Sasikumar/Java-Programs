@@ -968,6 +968,19 @@ String Constant Pool:
 
 When ever we create a string. Compiler implicity creats an instance for java.lang.string in spring pool or string constant pool
 
+concat:
+------
+	String is a immutable dataType ,If we try to concat() string it will not happen
+	String s1 = "Java";
+	s1.concat(" Programming");
+	System.out.println(s1);
+	
+	o/p:Java
+	
+	Why?String is immutable. The concat() method creates a new String, but we haven't assigned it back.
+	s1=s1.concat("Programming");
+	System.out.prinln(s1);
+
 STRING LITERAL
 --------------
           Anything that is enclosed with double quotes in java is consider as string literal
