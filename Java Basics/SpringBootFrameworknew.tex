@@ -102,7 +102,7 @@ Day1:SpringBoot Introduction:
 		
 		
 		
-	12.What is IOC?
+		12.What is IOC?
 		1.IOC means ->Inversion Of Control
 		2.It is used for creating and managing the objects is transffered from the programmer to springboot container
 		
@@ -118,6 +118,109 @@ Day1:SpringBoot Introduction:
 	What is the difference between IoC and DI?
 			->IOC is used to create and manage the object in spring container
 			->DI used to utilise the object from other 
+			
+		@component ->This annotation is used to create objects and manage the object
+		@Autowired ->This is used to utilise the Object from other class
+		
+	For Example:
+	//Employee class
+		import org.springframework.stereotype.Component;
+		import org.springframework.beans.factory.annotation.Autowired;
+
+
+		@Component
+		public class Employee {
+
+
+			private Department dept;
+
+
+			@Autowired
+			public Employee(Department dept) {
+				this.dept = dept;
+			}
+
+
+			public void show() {
+				dept.display();
+			}
+		}
+		
+	//Department class/Controller
+	import org.springframework.stereotype.Component;
+
+
+		@Component
+		public class Department {
+
+
+			public void display() {
+				System.out.println("IT Department");
+			}
+		}
+		
+		
+	Dependecy Injection:
+	-------------------
+			->Dependecy Injection is a design pattern 
+			->It gives required Object insted of creating the Object
+			@Component
+			class Car {
+
+
+				@Autowired
+				Engine engine;
+
+
+				public void drive() {
+					engine.start();
+					System.out.println("Car is running");
+				}
+			}
+			
+			@Component
+			class Engine {
+
+
+				public void start() {
+					System.out.println("Engine started");
+				}
+			}
+			
+			1.why do we need Dependecy Injection?
+			We need dependenci Injection for	
+				->Loose coupling
+				->Code reusability
+				->Easy Testing
+				->Easy Maintance
+				
+			2.Types of Dependecy Injection
+				->Constructor Injection
+				->Setter Injection
+				->Field Injection
+				
+			Constructor Injection:
+				The dependenci is provided through construction is know as constructor Injection
+			Setter Injection:
+				The dependency is provided through setter method
+			Field Injection:
+				The dependency is injected directly inside class variable
+				
+			Difference Between DI  and IOC 
+			
+			IOC:
+			- IoC stands for Inversion of Control.
+			- It is a principle in which the control of object creation and management is transferred from the programmer to the Spring Container.
+			- Spring Container creates, configures, and manages objects (Beans).
+			- @Component is one of the annotations used to tell Spring to create and manage an object.
+				
+			DI:
+			->DI stands for dependecy Injection
+			->It is a design pattern
+			->Insted of creating an object with new keyword it utlises the object from other classs
+			There are 3 types of DI:
+				->Constructor Injection
+				->setter injection
 
 
 
