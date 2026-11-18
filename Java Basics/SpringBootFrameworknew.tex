@@ -234,30 +234,142 @@ Springboot Controller->Repository->Hibernate->Jpa->MySQlDB
 GenerationType.IDENTITY – Uses MySQL's auto-increment feature
 -------------------------------------------------------------------------------------------------------
 
-    @SpringBootApplication Annotation:
-    -------------------------------
-            ->It is the main Annotation used for start point and enables important application features
-            ->It is a combination of three annotations
-                1.@Configuration
-                2.@EnableAutoConfiguration
-                3.@ComponentScan
+  -----------------------------------------------Annotations-------------------------------------------------------
+			1.@component:It is used for creating and mainting the object
+			2.@bean:It is manually created a spring bean
+			3.@configuration:tell this class contains bean
+			4.@Autowired:It is used to inject one object into another object manually
+			5.@Qualifier:when multiple bean available at same type @qualifier tells spring which bean to inject
+			6.@Primary:It tells which bean should be selected as default bean of the same type are available. It is generally placed above a class or a @Bean method.
+			7.@lazy:creates the bean when it is needed
+			8.@scope:Controlls bean scope
+			-------------------------------------------------------------------------------------------------------------------
+				@SpringBootApplication Annotation:
+				-------------------------------
+						->It is the main Annotation used for start point and enables important application features
+						->It is a combination of three annotations
+							1.@Configuration->creation and manageing the objects
+							2.@EnableAutoConfiguration->automatically configures the project based on dependecies available in project
+							3.@ComponentScan->Where to search classes in spring managed beans
+					Example:
+							@SpringBootApplication
+							public class firstproject{
+								p.s.v.m(S[]a){
+								springApplication.run(firstproject.class,args);
+								}
+							}
+							
+							
+				----------------------Class Level Annotation-------------------------------------------------------
+	
+
+
+				1.@RestController Annotation:
+				------------------------------- 
+							->It is used communicate with the client and server using RESTful web services.
+							->It is a combination of controller and response body
+						Difference between @Controller and @RestController:
+						------------------------------------------
+							->COntroller is used to return default view page
+							->Controller is used for MVC architecture
+							->Needs Response body for Direct data
 
 
 
 
-    @RestController Annotation:
-    ------------------------------- 
-                ->It is used communicate with the client and server using RESTful web services.
-                ->It is a combination of controller and response body
-            Difference between @Controller and @RestController:
-            ------------------------------------------
-                ->COntroller is used to return default view page
-                ->Controller is used for MVC architecture
-                ->Needs Response body for Direct data
+							->Restcontroller is used for RestAPI's
+							->Returns direct data
+							->It is a combination of controller and response body
+							
+							
+				2.@Controller:
+				-----------------
+						->Use to create web page it will return default HTML page
+						->controller is used for mvc architecture
+						->Needs response body to redirect data
+						
+				3.@Service:
+				-------------
+						->Used to contains request body
+						
+				4.@Repository:
+				---------------
+						->Used to contain database logic 
+						
+				5.@component:
+				-------------
+						->Used for create and manageing the bean
+						->It also tells which class should be managed by spring container
+						
+						
+				--------------------------------------Request Mapping Annotation--------------------------------------------------
+				@RequestMapping:
+				-----------------
+						1.Maps http request to a restcontroller or method
+					ex:
+							@RestController
+							@RequestMapping("Employye")
+							public class employee{
+								@GetMapping("/hi")
+								public String method1{
+								return "Hello!"
+								}
+							}
+							
+							
+				@GetMapping:Used to retrive or get data
+				@PostMapping:Used to create or save Data
+				@PutMapping:Used to update Existing Data
+				@deleteMapping:Used to delete a data
+				@patchMapping:Used to update single data
+				@Pathvariable:Used to fetch information direct URL
+					@GetMapping("/employee/{id}")
+							public String getEmployee(@PathVariable int id) {
+								return "Employee ID: " + id;
+							}
+							
+				@RequestParam:Gets a value from URL query parameters
+				@GetMapping("/employee")
+					public String getEmployee(@RequestParam String name) {
+						return "Employee Name: " + name;
+					}		
+					
+					http://localhost:8080/employee?name=Darshan //Employee Name:Darshan
+					
+				@Requestbody:Usually Receives data from requestbody in Json formate
+				@Responsebody:Sends the method's return value directly to the client instead of treating it as a webpage name.
+				@Controller
+					public class EmployeeController {
 
 
+						@GetMapping("/employee")
+						@ResponseBody
+						public String getEmployee() {
+							return "Darshan";
+						}
+					}
 
 
-                ->Restcontroller is used for RestAPI's
-                ->Returns direct data
-                ->It is a combination of controller and response body
+							
+				@ResponseStatus:Responsible for HTTP status code			
+				
+				---------------------------------------Exception Handler Annotation----------------------------------------
+				@ExceptionHandler:Handels exception when it occurs in the controller
+				Example:
+				@RestController
+					public class EmployeeController {
+
+
+						@GetMapping("/test")
+						public String test() {
+							int a = 10 / 0;
+							return "Success";
+						}
+
+
+						@ExceptionHandler(ArithmeticException.class)
+						public String handleException(ArithmeticException e) {
+							return "Cannot divide by zero";
+						}
+					}
+				@ControllerAdvice:Handels exception globally accross multiple controller
