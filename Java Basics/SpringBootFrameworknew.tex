@@ -373,3 +373,105 @@ GenerationType.IDENTITY – Uses MySQL's auto-increment feature
 						}
 					}
 				@ControllerAdvice:Handels exception globally accross multiple controller
+			-------------------------------------------------Rest Api--------------------------------------------------------------------------------------------
+				1.What is Rest Api?
+					REST API stands for Representational State transfer 
+					API stand for Application Program Interface
+					A Rest Api allows to communicate between 2 application using HTTP request
+				
+				2.What is Restfull webservice?
+					->which follows Rest Architecture principle 
+				
+				3.Status Code:
+				Status code	Meaning	Example
+					200	OK	
+					201	Created	
+					400	Bad Request	
+					401	Unauthorized
+					403	Forbidden	
+					404	Not Found	
+					500	Internal Server Error
+							
+							
+----------------------------------------------------------------JDBC------------------------------------------------------------------------------\
+				1.What is JDBC?
+					Java Database Connectivity
+					responsible for the database
+					we can connect the database in 5 steps 
+					1.Estable Connection
+					2.create statement 
+					3.
+					4.
+					5.close connection
+					
+				2.what is spring JDBC?
+					Spring JDBC is a spring framework module 
+					It simiplifies JDBC operation
+					
+					Traditionally we need 5 steps and we need a lot of code to be done
+					To reduce boiler code we use JDBC templetes
+					@Autowired
+						private JdbcTemplate jdbcTemplate;
+
+
+						public void getEmployees() {
+
+
+							String sql = "SELECT * FROM employee";
+
+
+							jdbcTemplate.queryForList(sql);
+						}
+													
+													
+				3.What is ORM?
+					->ORM stands for Object Relationship Mapping
+					->It is a technice that maps Object to the database
+					->Ex:
+						class Employee {
+								int id;
+								String name;
+								double salary;
+							}
+						Java class → Database table.
+						Java object → Database row.
+						Java variable → Database column
+						
+						
+				4.What is JPA?
+					JPA->Java Persistance Api
+						It gives us ready-made database operations.
+						Some of the methods are:
+							save()
+							findall()
+							count()
+							findById()	
+							deleteById()
+							existsByid()
+							count()
+							
+							
+				5. Hibernate
+
+
+				Hibernate is an ORM framework and a popular implementation of JPA.
+
+
+				It implements JPA specifications and communicates with the database using JDBC.
+				
+				Hibernate is an ORM framework implementation of JPA communicates with the db using HDBC
+															
+----------------------------------------------------ORM(Object Relationship Mapping)-------------------------------------------------------------------
+				1.What is Entity Relationship?
+					An Entity Relationship (ER) describes how two or more entities (tables) are connected to each other in a database.
+					1. @OneToOne
+					2. @OneToMany
+					3. @ManyToOne		
+					4. @ManyToMany		
+							
+				---@JoinColumn----
+					@JoinColumn specifies the database column used to hold a foreign key for a relationship.
+				
+				
+				3.What is data source?
+				4.What is HikariCP?
