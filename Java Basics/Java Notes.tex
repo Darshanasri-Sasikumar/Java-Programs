@@ -1729,4 +1729,43 @@ Example:
 	int sum = numbers.stream().reduce(0, (a, b) -> a + b);
 	System.out.println(sum);
 
+Stream->
+It is used stream the data from collection
+It is used as an starting point for processing the data
 
+
+
+
+List<Integer> s= Arrays.asList(10,20,30,40);
+stream.Integer= numbers.stream().
+
+
+
+
+
+
+
+
+Intermediate Operation:
+                    ->It is used to process stream data
+                    ->we can have multiple Intermediate Operation
+					->Return in another stream , it executes in terminal operation
+					->Executes only when terminal operation is called lazy
+					
+					examples are:
+						->filter
+						->Map
+						->flash Map
+						->sorted
+						->distinct
+								List<Integer> result = numbers.stream().filter(n -> n > 20).map(n -> n * 2).collect(Collectors.toList());
+									System.out.println(result);
+					
+Termianl Operatio:
+			->Used to provide final results
+			->Triggers the execution of stream pipeline
+			exampe
+				->foreach()
+				->collect()
+				->count()
+				->reduce
